@@ -18,12 +18,15 @@ parameter clk_freq = 1000000000 / tck; // Frequenzy in HZ
 reg        clk;
 reg        rst;
 wire       led;
+wire       led5;
 
 //----------------------------------------------------------------------------
 // UART STUFF (testbench uart, simulating a comm. partner)
 //----------------------------------------------------------------------------
 wire         uart_rxd;
 wire         uart_txd;
+wire         uart_rxd1;
+wire         uart_txd1;
 
 //----------------------------------------------------------------------------
 // Device Under Test 
@@ -38,7 +41,10 @@ system #(
 	.led(          led    ),
 	// Uart
 	.uart_rxd(  uart_rxd  ),
-	.uart_txd(  uart_txd  )
+	.uart_txd(  uart_txd  ),
+        // Uart1
+	.uart_rxd1(  uart_rxd1  ),
+	.uart_txd1(  uart_txd1  )
 );
 
 /* Clocking device */

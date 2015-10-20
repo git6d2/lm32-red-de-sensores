@@ -1,4 +1,4 @@
-XILINXCADROOT   = /opt/cad/Xilinx/10.1/ISE
+XILINXCADROOT   = /opt/Xilinx/14.7/ISE_DS/ISE
 
 VINCDIR=                                  \
 	-I../rtl/wb_conbus                 \
@@ -36,12 +36,18 @@ SRC=                                      \
 	../rtl/wb_timer/wb_timer.v         \
 	../rtl/wb_gpio/wb_gpio.v           \
 	../rtl/wb_spi/wb_spi.v             \
-	../rtl/wb_i2c/i2c_master_wb_top.v  \
-	../rtl/wb_i2c/i2c_master_registers.v  \
-	../rtl/wb_i2c/i2c_master_byte_ctrl.v  \
-	../rtl/wb_i2c/i2c_master_bit_ctrl.v  \
-	../rtl/wb_conbus/conbus.v          \
-	../rtl/wb_conbus/conbus_arb.v      
+                ../rtl/wb_conbus/conbus.v          \
+	../rtl/wb_conbus/conbus_arb.v  \
+      
+ 
+	#../rtl/wb_conbus/conbus.v          \
+	#../rtl/wb_conbus/conbus_arb.v   
+       #../rtl/wb_i2c/i2c_master_wb_top.v  \
+	#../rtl/wb_i2c/i2c_master_registers.v  \
+	#../rtl/wb_i2c/i2c_master_byte_ctrl.v  \
+	#../rtl/wb_i2c/i2c_master_bit_ctrl.v  \
+        #../rtl/wb_i2c/i2c_master_defines.v  \
+        #../rtl/wb_i2c/timescale.v\   
 
 #############################################################################
 # Synthesis constants
