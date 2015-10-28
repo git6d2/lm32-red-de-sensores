@@ -10,7 +10,7 @@ module system
 //	parameter   bootram_file     = "../firmware/arch_examples/image.ram",
 	parameter   bootram_file     = "../firmware/boot0-serial/image.ram",
 //	parameter   bootram_file     = "../firmware/hw-test/image.ram",
-	parameter   clk_freq         = 100000000,
+	parameter   clk_freq         = 50000000,
 	parameter   uart_baud_rate   = 115200
 ) (
 	input             clk,
@@ -486,9 +486,9 @@ assign uart_txd  = uart0_txd;
 assign uart0_rxd = uart_rxd;
 assign led       = ~uart_txd;
 
-assign uart1_txd  = uart1_txd;
-assign uart1_rxd = uart1_rxd;
-assign led5       = ~uart1_txd; 
+assign uart_txd1  = uart1_txd;
+assign uart1_rxd = uart_rxd1;
+assign led5       = ~uart_txd1; 
 
 assign spi_mosi  = spi0_mosi;
 assign spi0_miso = spi_miso;
