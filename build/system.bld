@@ -1,10 +1,10 @@
-Release 14.7 ngdbuild P.20131013 (lin64)
+Release 14.7 ngdbuild P.20131013 (lin)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -uc
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/ngdbuild -uc
 ../system.ucf system.ngc
 
-Reading NGO file "/home/miguel/Documentos/lm322/build/system.ngc" ...
+Reading NGO file "/home/wilson/lm32-red-de-sensores/build/system.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -12,8 +12,120 @@ Annotating constraints to design from ucf file "../system.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
 WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_sys_clk = PERIOD
-   sys_clk_pin 100 MHz HIGH 50%;> [../system.ucf(6)]: Unable to find an active
+   sys_clk_pin 50 MHz HIGH 50%;> [../system.ucf(5)]: Unable to find an active
    'TNM' or 'TimeGrp' constraint named 'sys_clk_pin'.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "gpio_io<0>"	LOC = "J15"	|>
+   [../system.ucf(12)]: NET "gpio_io<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "gpio_io<0>"	LOC = "J15"	|> [../system.ucf(12)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = "LVCMOS33";>
+   [../system.ucf(12)]: NET "gpio_io<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "gpio_io<1>"	LOC = "K15"	|>
+   [../system.ucf(13)]: NET "gpio_io<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "gpio_io<1>"	LOC = "K15"	|> [../system.ucf(13)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = "LVCMOS33";>
+   [../system.ucf(13)]: NET "gpio_io<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "gpio_io<2>"	LOC = "K14"	|>
+   [../system.ucf(14)]: NET "gpio_io<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "gpio_io<2>"	LOC = "K14"	|> [../system.ucf(14)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = "LVCMOS33";>
+   [../system.ucf(14)]: NET "gpio_io<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "gpio_io<3>"	LOC = "E16"	|>
+   [../system.ucf(15)]: NET "gpio_io<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "gpio_io<3>"	LOC = "E16"	|> [../system.ucf(15)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = "LVCMOS33";>
+   [../system.ucf(15)]: NET "gpio_io<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "gpio_io<4>"	LOC = "P16"	|>
+   [../system.ucf(16)]: NET "gpio_io<4>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "gpio_io<4>"	LOC = "P16"	|> [../system.ucf(16)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = "LVCMOS33";>
+   [../system.ucf(16)]: NET "gpio_io<4>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "gpio_io<5>"	LOC = "E4"	|>
+   [../system.ucf(17)]: NET "gpio_io<5>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "gpio_io<5>"	LOC = "E4"	|> [../system.ucf(17)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = "LVCMOS33";>
+   [../system.ucf(17)]: NET "gpio_io<5>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "gpio_io<6>"	LOC = "P4"	|>
+   [../system.ucf(18)]: NET "gpio_io<6>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "gpio_io<6>"	LOC = "P4"	|> [../system.ucf(18)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = "LVCMOS33";>
+   [../system.ucf(18)]: NET "gpio_io<6>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "gpio_io<7>"	LOC = "L17"	|>
+   [../system.ucf(19)]: NET "gpio_io<7>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "gpio_io<7>"	LOC = "L17"	|> [../system.ucf(19)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = "LVCMOS33";>
+   [../system.ucf(19)]: NET "gpio_io<7>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
 
 Done...
 
@@ -27,13 +139,14 @@ Partition Implementation Status
 -------------------------------
 
 NGDBUILD Design Results Summary:
-  Number of errors:     0
-  Number of warnings:   1
+  Number of errors:    16
+  Number of warnings:   9
 
-Total memory usage is 462788 kilobytes
+Total memory usage is 102988 kilobytes
 
-Writing NGD file "system.ngd" ...
-Total REAL time to NGDBUILD completion:  14 sec
-Total CPU time to NGDBUILD completion:   13 sec
+Total REAL time to NGDBUILD completion:  10 sec
+Total CPU time to NGDBUILD completion:   10 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
 
 Writing NGDBUILD log file "system.bld"...
