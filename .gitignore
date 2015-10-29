@@ -1,0 +1,10 @@
+firmware/red\ de\ sensores/image*
+firmware/red\ de\ sensores/*~
+firmware/red\ de\ sensores/*.o
+firmware/red\ de\ sensores/*.d
+*~
+simulation/*
+build/*
+
+
+
