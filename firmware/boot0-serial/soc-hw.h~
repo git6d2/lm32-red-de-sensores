@@ -46,7 +46,7 @@ void     jump(uint32_t addr);
 /****************************************************************************
  * Timer
  */
-/* #define TIMER_EN     0x08    // Enable Timer
+#define TIMER_EN     0x08    // Enable Timer
 #define TIMER_AR     0x04    // Auto-Reload
 #define TIMER_IRQEN  0x02    // IRQ Enable
 #define TIMER_TRIG   0x01    // Triggered (reset when writing to TCR)
@@ -63,22 +63,20 @@ typedef struct {
 void msleep(uint32_t msec);
 void nsleep(uint32_t nsec);
 
+void prueba();
+void prueba1();
 void tic_init();
 
-*/
 /***************************************************************************
  * GPIO0
  */
 typedef struct {
-	volatile uint32_t ctrl;
-	volatile uint32_t dummy1;
-	volatile uint32_t dummy2;
-	volatile uint32_t dummy3;
-	volatile uint32_t in;
-	volatile uint32_t out;
-	volatile uint32_t oe;
+	volatile uint32_t read;
+	volatile uint32_t write;
+	volatile uint32_t dir;
 } gpio_t;
-
+void     prueba(); 
+void     tim();
 /***************************************************************************
  * UART0
  */
@@ -87,8 +85,7 @@ typedef struct {
 #define UART_BUSY 0x10                    // TX Busy
 
 typedef struct {
-   volatile uint32_t UART_BUSY;
-   volatile uint32_t UART_DR;
+  
    volatile uint32_t ucr;
    volatile uint32_t rxtx;
 } uart_t;
@@ -97,15 +94,18 @@ void uart_init();
 void uart_putchar(char c);        
 void uart_putint(int d);
 void uart_putstr(char *str);
-char uart_getchar();
 void uart_putchar1(char f);
+char uart_getchar();
+char uart_getchar1();
+
 
 /***************************************************************************
  * Pointer to actual components
  */
 extern uart_t   *uart1;
 extern uart_t   *uart0; 
-extern gpio_t   *gpio0; 
+extern gpio_t   *gpio0;
+extern timer_t  *timer0; 
 extern uint32_t *sram0; 
 
 #endif // SPIKEHW_H

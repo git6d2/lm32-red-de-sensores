@@ -125,7 +125,7 @@ int main()
 	uart_putstr("\r\n");
 	
 	uart_putstr( "GPIO Test..." );
-	gpio0->oe = 0x000000ff;
+	
 	for(;;) {
 		for(i=0; i<8; i++) {
 			uint32_t out1, out2;

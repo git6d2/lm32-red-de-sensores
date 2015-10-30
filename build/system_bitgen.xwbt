@@ -1,0 +1,7 @@
+INFILE=/home/miguel/Documentos/lm32gp/build/system-routed.ncd
+OUTFILE=/home/miguel/Documentos/lm32gp/build/system.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=/home/miguel/Documentos/lm32gp/build
+LICENSE=WebPack
+USER_INFO=211005437_0_0_775

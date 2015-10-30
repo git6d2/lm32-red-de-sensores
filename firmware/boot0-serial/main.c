@@ -13,43 +13,17 @@ int main()
 	// Initialize UART
 
 	c='u';
-          x= uart_getchar();
+uart_putchar('i');
 
-           uart_putchar1(x);
+gpio0->dir=0x0F;
 
-	for(;;) {
-		uint32_t start, size; 
-	       c = uart_getchar();
+//for(;;)
+prueba1();
+	
+  /*for(;;)
+{
+  uart_putchar(uart_getchar1());
 
-		switch (c) {
-    		case 'u': // upload 
-    			uart_putstr("**tengo sueño** > \r\n");
-    			break;
-		case 'o': // enviar una cadena 
-    			
-                       uart_putstr("jajaja \r\n");
-                         break;
-
-		case 'd': // enviar un caracter
-    			
-				   uart_putchar('o');
-    			break;
-    		
-                case 's' ://echo int
-                           
-                        uart_putchar(c);
-                         break; 
-              
-   
-		default:
-			uart_putstr("**SAKC/bootloader** > \r\n");
-			break;
-				
-		};
-               
-                
-             
-		
-	}
+}*/
+	
 }
-

@@ -25,8 +25,7 @@ wire       led5;
 //----------------------------------------------------------------------------
 wire         uart_rxd;
 wire         uart_txd;
-wire         uart_rxd1;
-wire         uart_txd1;
+
 
 //----------------------------------------------------------------------------
 // Device Under Test 
@@ -41,10 +40,8 @@ system #(
 	.led(          led    ),
 	// Uart
 	.uart_rxd(  uart_rxd  ),
-	.uart_txd(  uart_txd  ),
-        // Uart1
-	.uart_rxd1(  uart1_rxd  ),
-	.uart_txd1(  uart1_txd  )
+	.uart_txd(  uart_txd  )
+     
 );
 
 /* Clocking device */

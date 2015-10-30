@@ -8,15 +8,17 @@ module system
 #(
 //	parameter   bootram_file     = "../firmware/cain_loader/image.ram",
 //	parameter   bootram_file     = "../firmware/arch_examples/image.ram",
-//	parameter   bootram_file     = "../firmware/boot0-serial/image.ram",
-	parameter   bootram_file     = "../firmware/hw-test/image.ram",
-	parameter   clk_freq         = 50000000,
+	parameter   bootram_file     = "../firmware/boot0-serial/image.ram",
+//	parameter   bootram_file     = "../firmware/hw-test/image.ram",
+	parameter   clk_freq         = 100000000,
 	parameter   uart_baud_rate   = 115200
 ) (
 	input             clk,
 	// Debug 
 	output            led,led5,
 	input             rst,
+       // GPIO
+	inout [7:0]	 gpio_io,
 
 	// UART0
 	input             uart_rxd, 
@@ -26,8 +28,7 @@ module system
 
         input             uart_rxd1, 
 	output            uart_txd1,
-
-
+	
 	// SPI
 	input             spi_miso, 
 	output            spi_mosi,
@@ -172,11 +173,11 @@ wire [1:0]   lm32i_bte,
 //---------------------------------------------------------------------------
 wire [31:0]  intr_n;
 wire         uart0_intr = 0;
-wire         uart1_intr = 0;  
+wire         gpio0_intr;  
 //wire   [1:0] timer0_intr;
-wire         gpio0_intr;
 
-assign intr_n = { 29'hFFFFFFF, ~gpio0_intr, ~uart1_intr, ~uart0_intr };
+
+assign intr_n = { 30'hFFFFFFF, ~gpio0_intr, ~uart0_intr };
 
 //---------------------------------------------------------------------------
 // Wishbone Interconnect
@@ -186,7 +187,7 @@ conbus #(
 	.s0_addr(3'b000),	// bram     0x00000000 
 	.s1_addr(3'b010),	// uart0    0x20000000 
 	.s2_addr(3'b011),	// uart1    0x30000000 
-	.s3_addr(3'b100),   // gpio     0x40000000 
+	.s3_addr(3'b100),       // gpio     0x40000000 
 	.s4_addr(3'b101),	// spi      0x50000000 
 	.s5_addr(3'b110)	// i2c      0x60000000 
 ) conbus0(
@@ -462,7 +463,7 @@ wb_timer #(
 //---------------------------------------------------------------------------
 
 wire [7:0] gpio0_io;
-wire        gpio0_irq;
+//wire        gpio0_irq;
 
 wb_gpio gpio0 (
 	.clk(      clk          ),
@@ -488,12 +489,13 @@ assign led       = ~uart_txd;
 
 assign uart_txd1  = uart1_txd;
 assign uart1_rxd = uart_rxd1;
-assign led5       = ~uart_txd1; 
 
-assign spi_mosi  = spi0_mosi;
-assign spi0_miso = spi_miso;
-assign spi_clk = spi0_clk;
 
+//assign spi_mosi  = spi0_mosi;
+//assign spi0_miso = spi_miso;
+//assign spi_clk = spi0_clk;
+
+assign gpio_io = gpio0_io;
 //assign i2c_sda = i2c0_sda;
 //assign i2c_scl = i2c0_scl;
 endmodule 
