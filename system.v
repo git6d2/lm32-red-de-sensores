@@ -59,7 +59,6 @@ wire [31:0]  lm32i_adr,
              uart0_adr,
              uart1_adr,
              spi0_adr,
-             i2c0_adr,
              timer0_adr,
              gpio0_adr,
              ddr0_adr,
@@ -77,8 +76,6 @@ wire [31:0]  lm32i_dat_r,
              uart1_dat_w,  
              spi0_dat_r,
              spi0_dat_w,
-             i2c0_dat_r,
-             i2c0_dat_w,
              timer0_dat_r,
              timer0_dat_w,
              gpio0_dat_r,
@@ -107,7 +104,6 @@ wire         lm32i_we,
              uart0_we,
              uart1_we,
              spi0_we,
-             i2c0_we,
              timer0_we,
              gpio0_we,
              bram0_we,
@@ -120,7 +116,6 @@ wire         lm32i_cyc,
              uart0_cyc,
              uart1_cyc,
              spi0_cyc,
-             i2c0_cyc,
              timer0_cyc,
              gpio0_cyc,
              bram0_cyc,
@@ -145,7 +140,6 @@ wire         lm32i_ack,
              uart0_ack,
              uart1_ack,
              spi0_ack,
-             i2c0_ack,
              timer0_ack,
              gpio0_ack,
              bram0_ack,
@@ -172,12 +166,13 @@ wire [1:0]   lm32i_bte,
 // Interrupts
 //---------------------------------------------------------------------------
 wire [31:0]  intr_n;
+wire [1:0]   timer0_intr;
 wire         uart0_intr = 0;
 wire         gpio0_intr;  
 //wire   [1:0] timer0_intr;
 
 
-assign intr_n = { 30'hFFFFFFF, ~gpio0_intr, ~uart0_intr };
+assign intr_n = { 29'hFFFFFFF,~timer0_intr[1], ~gpio0_intr, ~uart0_intr };
 
 //---------------------------------------------------------------------------
 // Wishbone Interconnect
@@ -189,7 +184,7 @@ conbus #(
 	.s2_addr(3'b011),	// uart1    0x30000000 
 	.s3_addr(3'b100),       // gpio     0x40000000 
 	.s4_addr(3'b101),	// spi      0x50000000 
-	.s5_addr(3'b110)	// i2c      0x60000000 
+	.s5_addr(3'b110)	// timer    0x60000000 
 ) conbus0(
 	.sys_clk( clk ),
 	.sys_rst( ~rst ),
@@ -240,15 +235,7 @@ conbus #(
 	.s2_cyc_o(  uart1_cyc   ),
 	.s2_stb_o(  uart1_stb   ),
 	.s2_ack_i(  uart1_ack   ),
-	/* Slave2
-	.s2_dat_i(  timer0_dat_r ),
-	.s2_dat_o(  timer0_dat_w ),
-	.s2_adr_o(  timer0_adr   ),
-	.s2_sel_o(  timer0_sel   ),
-	.s2_we_o(   timer0_we    ),
-	.s2_cyc_o(  timer0_cyc   ),
-	.s2_stb_o(  timer0_stb   ),
-	.s2_ack_i(  timer0_ack   ),*/
+	
 	// Slave3
 	.s3_dat_i(  gpio0_dat_r ),
 	.s3_dat_o(  gpio0_dat_w ),
@@ -268,14 +255,15 @@ conbus #(
 	.s4_stb_o(  spi0_stb   ),
 	.s4_ack_i(  spi0_ack   ),
 	// Slave5
-	.s5_dat_i(  i2c0_dat_r ),
-	.s5_dat_o(  i2c0_dat_w ),
-	.s5_adr_o(  i2c0_adr   ),
-	.s5_sel_o(  i2c0_sel   ),
-	.s5_we_o(   i2c0_we    ),
-	.s5_cyc_o(  i2c0_cyc   ),
-	.s5_stb_o(  i2c0_stb   ),
-	.s5_ack_i(  i2c0_ack   )
+        .s5_dat_i(  timer0_dat_r ),
+	.s5_dat_o(  timer0_dat_w ),
+	.s5_adr_o(  timer0_adr   ),
+	.s5_sel_o(  timer0_sel   ),
+	.s5_we_o(   timer0_we    ),
+	.s5_cyc_o(  timer0_cyc   ),
+	.s5_stb_o(  timer0_stb   ),
+	.s5_ack_i(  timer0_ack   )
+
 	
 );
 
