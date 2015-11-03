@@ -1,57 +1,157 @@
-LM32_CC=lm32-rtems4.11-gcc
-LM32_LD=lm32-rtems4.11-ld
-LM32_OBJCOPY=lm32-rtems4.11-objcopy
-LM32_OBJDUMP=lm32-rtems4.11-objdump
+XILINXCADROOT   = /opt/Xilinx/14.7/ISE_DS/ISE
 
-SREC2VRAM ?= ../../tools/srec2vram/srec2vram
-VRAMFILE=image.ram
+VINCDIR=                                  \
+	-I../rtl/wb_conbus                 \
+	-I../rtl/lm32                      \
+	-I../rtl/wb_ddr
 
-CFLAGS=-MMD -O2 -Wall -g -s -fomit-frame-pointer -mbarrel-shift-enabled   -mmultiply-enabled -mdivide-enabled -msign-extend-enabled
-LDFLAGS=-nostdlib -nodefaultlibs -Tlinker.ld 
-SEGMENTS = -j .text -j .rodata -j .data
+SYN_SRC=
 
-all: image.srec $(VRAMFILE) 
+SIM_SRC=                                  \
+	system_tb.v                           \
+	../sim/sram/sram16.v               \
+	../sim/unisims/BUFG.v              \
+	../sim/unisims/DCM.v
 
-crt0ram.o: crt0ram.S
-	$(LM32_CC) $(CFLAGS) -c crt0ram.S
+SRC=                                      \
+	../system.v                              \
+	../rtl/lac/lac.v                   \
+	../rtl/lac/uart.v                  \
+	../rtl/lac/dp_ram.v                \
+	../rtl/lm32/lm32_cpu.v             \
+	../rtl/lm32/lm32_instruction_unit.v	\
+	../rtl/lm32/lm32_decoder.v         \
+	../rtl/lm32/lm32_simtrace.v        \
+	../rtl/lm32/lm32_load_store_unit.v \
+	../rtl/lm32/lm32_adder.v           \
+	../rtl/lm32/lm32_addsub.v          \
+	../rtl/lm32/lm32_logic_op.v        \
+	../rtl/lm32/lm32_shifter.v         \
+	../rtl/lm32/lm32_multiplier.v      \
+	../rtl/lm32/lm32_mc_arithmetic.v   \
+	../rtl/lm32/lm32_interrupt.v       \
+	../rtl/lm32/lm32_ram.v             \
+	../rtl/wb_bram/wb_bram.v           \
+	../rtl/wb_uart/wb_uart.v           \
+	../rtl/wb_timer/wb_timer.v         \
+	../rtl/wb_gpio/wb_gpio.v           \
+	../rtl/wb_spi/wb_spi.v             \
+                ../rtl/wb_conbus/conbus.v          \
+	../rtl/wb_conbus/conbus_arb.v  \
+      
+ 
+	#../rtl/wb_conbus/conbus.v          \
+	#../rtl/wb_conbus/conbus_arb.v   
+       #../rtl/wb_i2c/i2c_master_wb_top.v  \
+	#../rtl/wb_i2c/i2c_master_registers.v  \
+	#../rtl/wb_i2c/i2c_master_byte_ctrl.v  \
+	#../rtl/wb_i2c/i2c_master_bit_ctrl.v  \
+        #../rtl/wb_i2c/i2c_master_defines.v  \
+        #../rtl/wb_i2c/timescale.v\   
 
-main.o: main.c
-	$(LM32_CC) $(CFLAGS) -c main.c
+#############################################################################
+# Synthesis constants
+SYNCLEAN=system.bgn system.drc system.mrp system.ngd system.pcf 
+SYNCLEAN+=system.bld system.lso system.ncd system.ngm system.srp
+SYNCLEAN+=system.bit system_signalbrowser.* system-routed_pad.tx
+SYNCLEAN+=system.map system_summary.xml timing.twr
+SYNCLEAN+=system-routed* system_usage* system.ngc param.opt netlist.lst
+SYNCLEAN+=xst system.prj *ngr *xrpt  _xmsgs  xlnx_auto_0_xdb *html *log *xwbt
 
-soc-hw.o: soc-hw.c
-	$(LM32_CC) $(CFLAGS) -c soc-hw.c
+USAGE_DEPTH=0
+SMARTGUIDE= 
 
-image: crt0ram.o main.o soc-hw.o
-	$(LM32_LD) $(LDFLAGS) -Map image.map -N -o image crt0ram.o main.o soc-hw.o
+#############################################################################
+# Simulation constants
+SIMCLEAN=system_tb.vvp system_tb.vcd verilog.log system_tb.vvp.list simulation
 
-image.lst: image
-	$(LM32_OBJDUMP) -h -S $< > $@
+CVER=cver
+GTKWAVE=gtkwave
+IVERILOG=iverilog
+VVP=vvp
+	
+#############################################################################
+# 
+sim: system_tb.vcd
+syn: system.bit
+view: system_tb.view
 
-image.bin: image
-	$(LM32_OBJCOPY) $(SEGMENTS) -O srec image image.bin
-	$(LM32_OBJCOPY) $(SEGMENTS) -O binary image image_bin.bin
+#############################################################################
+# Ikarus verilog simulation
 
-image.srec: image image.lst
-	$(LM32_OBJCOPY) $(SEGMENTS) -O srec image image.srec
+system_tb.vvp:
+	rm -rf  simulation && mkdir simulation
+	cp system_tb.v system_conf.v system_tb.vcd.save.sav simulation && cd simulation && rm -f $@.list
+	for i in $(SRC); do echo $$i >> simulation/$@.list; done
+	for i in $(SIM_SRC); do echo $$i >> simulation/$@.list; done
+	cd simulation && $(IVERILOG) -o $@ $(VINCDIR) -c $@.list -s $(@:.vvp=)
 
-$(VHDLFILE): image.srec
-	$(SREC2VHDL) image.srec > $(VHDLFILE)
+postsim: system.ngc
+	cd build &&  netgen -sim -ofmt verilog system.ngc
+	cd build && iverilog -Wall \
+	-y $(XILINXCADROOT)/verilog/src/unisims \
+	-y $(XILINXCADROOT)/verilog/src/XilinxCoreLib \
+	-y ../   \
+	system.v ../system_tb.v -o system.bin
+	cd build &&  vvp system.bin
 
-$(VRAMFILE): image.srec
-	$(SREC2VRAM) image.srec 0x00860000 0x10000 > $(VRAMFILE)
+%.vcd: %.vvp
+	cd simulation && $(VVP) $<
+
+#############################################################################
+# ISE Synthesis
+
+
+system.prj:
+	rm -rf build && mkdir build
+	@rm -f $@
+	for i in $(SRC); do echo verilog work $$i >> build/$@; done
+	for i in $(SRC_HDL); do echo VHDL work $$i >> build/$@; done
+
+system.ngc: system.prj
+	cd build && xst -ifn ../system.xst
+
+system.ngd: system.ngc system.ucf
+	cd build && ngdbuild -uc ../system.ucf system.ngc
+
+system.ncd: system.ngd
+	cd build && map $(SMARTGUIDE) system.ngd
+
+system-routed.ncd: system.ncd
+	cd build && par $(SMARTGUIDE) -ol high -w system.ncd system-routed.ncd
+
+system.bit: system-routed.ncd
+	cd build &&  bitgen -w system-routed.ncd system.bit
+	@mv -f build/system.bit $@
+
+system.mcs: system.bit
+	cd build && promgen -u 0 system
+
+system-routed.xdl: system-routed.ncd
+	cd build && xdl -ncd2xdl system-routed.ncd system-routed.xdl
+
+system-routed.twr: system-routed.ncd
+	cd build &&  trce -v 10 system-routed.ncd system.pcf
+
+timing: system-routed.twr
+
+usage: system-routed.xdl
+	xdlanalyze.pl system-routed.xdl $(USAGE_DEPTH)
+
+
+upload: system.bit
+	sudo fpgaprog -v -f system.bit 
+
+
+####################################################################
+# final targets
+
+%.view: %.vcd
+	cd simulation && $(GTKWAVE) $< $<.save.sav
 
 clean:
-	rm -f image image.lst image.bin image.srec image.map  *.o *.d
+	rm -Rf build $(SYNCLEAN) $(SIMCLEAN) 
 
-bios:
-	cp /home/cain/Embedded/lm32/m-labs/milkymist/software/bios/bios.elf .
-	lm32-rtems4.11-objcopy -j .text -j .rodata -j .data -O srec bios.elf bios.srec
-	lm32-rtems4.11-objcopy -j .text -j .rodata -j .data -O binary bios.elf bios.bin
-	$(SREC2VRAM) bios.srec 0x00860000 0x10000 > bios.image
+.PHONY: clean view
 
-
-DEPS := $(wildcard *.d)
-ifneq ($(DEPS),)
-include $(DEPS)
-endif
 

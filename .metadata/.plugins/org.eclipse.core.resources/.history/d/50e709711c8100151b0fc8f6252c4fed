@@ -1,0 +1,13 @@
+
+public class holoa {
+
+	public static void main(String[] args) {
+		
+		int a = 100000;
+		System.out.println(Integer.toBinaryString(100000));
+		int b = a >> 16 & 0xff;
+		System.out.println(Integer.toBinaryString(b));
+		System.out.println(Integer.toBinaryString(050));
+	}
+
+}

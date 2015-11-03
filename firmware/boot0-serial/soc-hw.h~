@@ -9,7 +9,7 @@
 #define RAM_START 0x40000000
 #define RAM_SIZE  0x04000000
 
-#define FCPU      50000000
+#define FCPU      100000000
 
 #define UART_RXBUFSIZE 32
 
@@ -62,6 +62,8 @@ typedef struct {
 
 void msleep(uint32_t msec);
 void nsleep(uint32_t nsec);
+void flancopos();
+uint32_t  flanconeg();
 
 void prueba();
 void prueba1();

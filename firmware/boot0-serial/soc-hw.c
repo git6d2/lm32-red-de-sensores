@@ -61,12 +61,12 @@ void msleep(uint32_t msec)
  	} while ( ! (tcr & TIMER_TRIG) );
 }
 
-void nsleep(uint32_t nsec)
+uint32_t nsleep(uint32_t nsec)
 {
 	uint32_t tcr;
 
 	// Use timer0.1
-	timer0->compare1 = (FCPU/1000000)*nsec;
+	timer0->compare1 = (FCPU/1000)*nsec;
 	timer0->counter1 = 0;
 	timer0->tcr1 = TIMER_EN;
 
@@ -74,32 +74,28 @@ void nsleep(uint32_t nsec)
 		//halt();
  		tcr = timer0->tcr1;
  	} while ( ! (tcr & TIMER_TRIG) );
+
+  return timer0->counter1;
 }
 /***************************************************************************
  * GPIO0 Functions
  */
-int flancopos()
+void flancopos()
 {
 	uint32_t tcr;
-
 	// Use timer0.1
-
 	timer0->counter1 = 0;
 	timer0->tcr1 = TIMER_EN;
 
- return counter1;
-	
 }
-int flanconeg()
+uint32_t flanconeg()
 {
-	uint32_t tcr;
-
+	uint32_t tiempo,nanosegundos;
 	// Use timer0.1
-
-	timer0->counter1 = 0;
-	timer0->tcr1 = TIMER_EN;
-
- return counter1;
+        nanosegundos=timer0->counter1;
+        tiempo=(nanosegundos*1000)/(FCPU); 
+	timer0->tcr1 = 0;
+	return tiempo;
 	
 }
 /*void tic_init()
@@ -133,7 +129,7 @@ void prueba()
        
                    
                          entrada = gpio0->read;
-                         uart_putstr(entrada);
+                         uart_putstr('a');
                          gpio0->write=0x00;   
                         
 
@@ -149,10 +145,10 @@ void prueba()
 }
 void prueba1()
 {
-                         gpio0->write=0x10;   
-                         msleep(5);
+                         gpio0->write=0x00;   
+                         msleep(4);
                          gpio0->write=0x01;
-
+                         msleep(4);
 
 }
 char uart_getchar()
