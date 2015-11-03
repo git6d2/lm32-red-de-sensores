@@ -92,10 +92,11 @@ uint32_t flanconeg()
 {
 	uint32_t tiempo,nanosegundos;
 	// Use timer0.1
+        timer0->tcr1 = 0;
         nanosegundos=timer0->counter1;
         tiempo=(nanosegundos*1000)/(FCPU); 
-	timer0->tcr1 = 0;
-	return tiempo;
+	
+	return timer0->counter1;
 	
 }
 /*void tic_init()
@@ -143,7 +144,7 @@ void prueba()
 
           
 }
-void prueba1()
+void prueba1()           // genera un tren de pulsos
 {
                          gpio0->write=0x00;   
                          msleep(4);
