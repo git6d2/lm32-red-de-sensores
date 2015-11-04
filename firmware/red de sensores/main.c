@@ -1,164 +1,90 @@
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////////
+////                                                              ////
+////  main.c                                                      ////
+////                                                              ////
+////  Este archivo hace parte del trabajo realizado para el       ////
+////  proyecto de curso de Electronica Digital II		  ////
+////  Universidad Nacional de Colombia - 2015    		  ////
+////  					                          ////
+////                                                              ////
+////  Autores:                                                    ////
+////      - Miguel Beltran                          		  ////
+////      - Wilson Rojas                                          ////
+////      - Camilo Cortez                                         ////
+////                                                              ////
+////  Información adicional en: 				  ////
+////  https://sites.google.com/site/edigital2unal/proyectos/      ////
+////  	                                                          ////
+////                                                              ////
+//////////////////////////////////////////////////////////////////////
+////                                                              ////
+//// Copyright (C) 2015 Authors                                   ////
+////                                                              ////
+//// This source file may be used and distributed without         ////
+//// restriction provided that this copyright statement is not    ////
+//// removed from the file and that any derivative work contains  ////
+//// the original copyright notice and the associated disclaimer. ////
+////                                                              ////
+//// This source file is free software; you can redistribute it   ////
+//// and/or modify it under the terms of the GNU Lesser General   ////
+//// Public License as published by the Free Software Foundation; ////
+//// either version 2.1 of the License, or (at your option) any   ////
+//// later version.                                               ////
+////                                                              ////
+//// This source is distributed in the hope that it will be       ////
+//// useful, but WITHOUT ANY WARRANTY; without even the implied   ////
+//// warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR      ////
+//// PURPOSE.  See the GNU Lesser General Public License for more ////
+//// details.                                                     ////
+////                                                              ////
+//////////////////////////////////////////////////////////////////////
 
+
+/**
+ * Primitive first stage bootloader 
+ *
+ *
+ */
 #include "soc-hw.h"
 
-inline void writeint(uint32_t val)
-{
-	uint32_t i, digit;
+//**************************************************************************************************
+// Función principal del codigo - obtener informacion del xbe, a traves del usuario
+//**************************************************************************************************
 
-	for (i=0; i<8; i++) {
-		digit = (val & 0xf0000000) >> 28;
-		if (digit >= 0xA) 
-			uart_putchar('A'+digit-10);
-		else
-			uart_putchar('0'+digit);
-		val <<= 4;
-	}
-}
-
-void test2() {
-    uart_putchar('b');   
-}
-
-void test() {
-    uart_putchar('a');
-    test2();
-    uart_putchar('c');
-} 
-
-char glob[] = "Global";
-
-volatile uint32_t *p;
-volatile uint8_t *p2;
-
-extern uint32_t tic_msec;
 
 int main()
 {
-	uint32_t aa=1;
-
- // for(;;)
- // {
-//	  uart_putchar(2*(aa));
- //     uart_putchar((2+(aa++)));
-
-  //}
-	   prueba();
-   uart_putchar('b');
-   uart_putchar(2+3);
-   uart_putchar(2*3);
-   uart_putchar(6/3);
-   char test2[] = "Lokalerstr";
-   char *str = test2;
-   uint32_t i;
+                   
+                   uint32_t  x,x1, infosensores; 
     
-//    for (i = 0; i < 4; i++)
- //       test2[i] = 'l';
-  //  glob[0]  = 'g';
-    
- 	// Initialize stuff
-	uart_init();
+                   uart_putstr("0. modo sleep");         
+                   uart_putstr("1. desea iniciar la comunicacion "); 
+                  
+                   x=uart_getchar();    
+                   uar_putchar1(x);
+                   uart_putstr("seleccion datos sensados"); 
+                   uart_putstr("0. ninguno"); 
+                   uart_putstr("1. temperatura");         
+                   uart_putstr("2. humedad ");
+                   uart_putstr("3.temperatura y humedad ");
 
-	// Say Hello!
-	uart_putstr( "** Spike Test Firmware **\n" );
+                   x1=uart_getchar();    
+                   uar_putchar1(x1);
+                   uart_putstr("informacion tiempo real ");
+ 
 
-	// Initialize TIC
-	isr_init();
-	tic_init();
-	irq_set_mask( 0x00000002 );
-	irq_enable();
+              
+                   infosensores=uart_getchar1() 
+                  
+                
 
-	// Say Hello!
-	uart_putstr( "Timer Interrupt instelled.\n" );
-
-	// Do some trivial tests
-	uart_putstr( "Subroutine-Return Test: " );
-	test();
-	uart_putchar('\n');    
-
-	uart_putstr( "Local-Pointer Test:" );
-	for (;*str; str++) {
-	   uart_putchar(*str);
-	}
-	uart_putchar('\n');    
+      
 	
-	uart_putstr( "Global-Pointer Test:" );
-	str = glob;
-	for (;*str; str++) {
-	   uart_putchar(*str);
-	}
-	uart_putchar('\n');    
+  
+     /*for(;;)
+   {
+      uart_putchar(uart_getchar1()); // prueva del ECHO  de funcionamiento de la UART 1 a la UART2
 
-	uart_putstr( "Stack Pointer : " );
-	writeint(get_sp());
-	uart_putchar('\n');    
-
-	uart_putstr( "Global Pointer: " );
-	writeint(get_gp());
-	uart_putchar('\n');    
-
-	uart_putstr( "Timer Test (1s): " );
-	for(i=0; i<4; i++) {
-		uart_putstr("tic...");    
-		msleep(1000);
-	}
-	uart_putchar('\n');    
-
-	uart_putstr( "Timer Interrupt counter: " );
-	writeint( tic_msec );
-	uart_putchar('\n');    
-
-	int val = tic_msec;
-	uart_putstr( "Shift: " );
-	writeint( val );
-	uart_putstr(" <-> ");    
-	for(i=0; i<32; i++) {
-		if (val & 0x80000000)
-			uart_putchar( '1' );
-		else
-			uart_putchar( '0' );
-			
-		val <<= 1;
-	}
-	uart_putstr("\r\n");
+     }*/
 	
-	uart_putstr( "GPIO Test..." );
-	
-	for(;;) {
-		for(i=0; i<8; i++) {
-			uint32_t out1, out2;
-
-			out1 = 0x01 << i;
-			out2 = 0x80 >> i;
-			gpio0->out = out1 | out2;
-
-			msleep(100);
-		}
-	}
-
-
-/*
-	uart_putstr( "Memory Dump: " );
-	uint32_t *start = (uint32_t *)0x40000000;
-	uint32_t *end   = (uint32_t *)0x40000100;
-	uint32_t *p;
-	for (p=start; p<end; p++) {
-		if (((uint32_t)p & 12) == 0) {
-			uart_putstr("\r\n[");
-			writeint((uint32_t) p);
-			uart_putchar(']');    
-		}
-
-		uart_putchar(' ');    
-		writeint(*p);
-	}
-*/
-
-	uart_putstr("Entering Echo Test...\n");
-	while (1) {
-	   uart_putchar(uart_getchar());
-	}
 }
-

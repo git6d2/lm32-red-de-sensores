@@ -4,12 +4,12 @@ ENTRY(_start)
 __DYNAMIC = 0;
 
 
-_RAM_START = 0x00000000;
-_RAM_SIZE  = 0x1000;
-_RAM_END   = _RAM_START + _RAM_SIZE;
+_BRAM_START = 0x00860000;
+_BRAM_SIZE  = 0x1000;
+_BRAM_END   = _BRAM_START + _BRAM_SIZE;
 
 MEMORY {
-  ram    : ORIGIN = 0x00000000, LENGTH = 0x1000          /*  4k */
+  bram    : ORIGIN = 0x00860000, LENGTH = 0x1000          /*  4k */
 }
 
 SECTIONS
@@ -19,7 +19,7 @@ SECTIONS
     _ftext = .;
     *(.text .stub .text.* .gnu.linkonce.t.*)
     _etext = .;
-  } > ram
+  } > bram
 
   .rodata :
   {
@@ -28,7 +28,7 @@ SECTIONS
     *(.rodata .rodata.* .gnu.linkonce.r.*)
     *(.rodata1)
 	_erodata = .;
-  } > ram
+  } > bram
 
   .data : 
   {
@@ -39,7 +39,7 @@ SECTIONS
     _gp = ALIGN(16);
     *(.sdata .sdata.* .gnu.linkonce.s.*)
     _edata = .;
-  } > ram
+  } > bram
 
   .bss :
   {
@@ -53,7 +53,7 @@ SECTIONS
     *(COMMON)
     _ebss = .;
     _end = .;
-  } > ram
+  } > bram
 }
 
-PROVIDE(_fstack = ORIGIN(ram) + LENGTH(ram) - 4);
+PROVIDE(_fstack = ORIGIN(bram) + LENGTH(bram) - 4);

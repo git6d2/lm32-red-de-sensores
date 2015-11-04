@@ -13,7 +13,6 @@
 
 #define UART_RXBUFSIZE 32
 
-
 /****************************************************************************
  * Types
  */
@@ -42,7 +41,8 @@ void     isr_unregister(int irq);
  */
 void     halt();
 void     jump(uint32_t addr);
-
+void     prueba();
+void     prueba1();
 
 /****************************************************************************
  * Timer
@@ -61,25 +61,26 @@ typedef struct {
 	volatile uint32_t counter1;
 } timer_t;
 
-void msleep(uint32_t msec);
-void nsleep(uint32_t nsec);
+void     msleep(uint32_t msec);
+void     m1sleep(uint32_t msec);
+uint32_t nsleep(uint32_t nsec);
+uint32_t flancopos();
+uint32_t flanconeg();
 
-void prueba();
+
 void tic_init();
-
 
 /***************************************************************************
  * GPIO0
  */
 typedef struct {
-	volatile uint32_t ctrl;
-	volatile uint32_t dummy1;
-	volatile uint32_t dummy2;
-	volatile uint32_t dummy3;
-	volatile uint32_t in;
-	volatile uint32_t out;
-	volatile uint32_t oe;
+	volatile uint32_t read;
+	volatile uint32_t write;
+	volatile uint32_t dir;
 } gpio_t;
+ 
+void     sensor();
+void     tim();
 
 /***************************************************************************
  * UART0
@@ -89,38 +90,27 @@ typedef struct {
 #define UART_BUSY 0x10                    // TX Busy
 
 typedef struct {
+  
    volatile uint32_t ucr;
    volatile uint32_t rxtx;
 } uart_t;
 
-void uart_init();
-void uart_putchar(char c);
-void uart_putstr(char *str);
-char uart_getchar();
-
-/***************************************************************************
- * SPI0
- */
-
-typedef struct {
-   volatile uint32_t rxtx;
-   volatile uint32_t nop1;
-   volatile uint32_t cs;
-   volatile uint32_t nop2;
-   volatile uint32_t divisor;
-} spi_t;
-
-void spi_init();
-void spi_putchar(char c);
-char spi_getchar();
+void uart_init();                         
+void uart_putchar(char c);          // poner valor caracter UART0
+void uart_putint(int d);            // poner valor int UART0
+void uart_putstr(char *str);        // poner valor string UART0
+void uart_putchar1(char f);         // poner valor caracter UART1  
+char uart_getchar();                // obtener valor caracter UART0   
+char uart_getchar1();               // obtener valor caracter UART1
 
 
 /***************************************************************************
  * Pointer to actual components
  */
-extern timer_t  *timer0;
+extern uart_t   *uart1;
 extern uart_t   *uart0; 
-extern gpio_t   *gpio0; 
+extern gpio_t   *gpio0;
+extern timer_t  *timer0; 
 extern uint32_t *sram0; 
 
 #endif // SPIKEHW_H
