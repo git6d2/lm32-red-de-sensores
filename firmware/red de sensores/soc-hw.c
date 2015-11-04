@@ -13,12 +13,8 @@ void prueba()
 {
 	   uart0->rxtx=30;
 	   timer0->tcr0 = 0xAA;
-	   gpio0->ctrl=0x55;
-	   spi0->rxtx=1;
-	   spi0->nop1=2;
-	   spi0->cs=3;
-	   spi0->divisor=4;
-	   spi0->nop2=5;
+	   gpio0->dir=0x55;
+	
 
 }
 void tic_isr();
