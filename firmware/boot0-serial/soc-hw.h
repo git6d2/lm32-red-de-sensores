@@ -41,7 +41,8 @@ void     isr_unregister(int irq);
  */
 void     halt();
 void     jump(uint32_t addr);
-
+void     prueba();
+void     prueba1();
 
 /****************************************************************************
  * Timer
@@ -60,13 +61,13 @@ typedef struct {
 	volatile uint32_t counter1;
 } timer_t;
 
-void msleep(uint32_t msec);
+void     msleep(uint32_t msec);
+void     m1sleep(uint32_t msec);
 uint32_t nsleep(uint32_t nsec);
-void flancopos();
-uint32_t  flanconeg();
+uint32_t flancopos();
+uint32_t flanconeg();
 
-void prueba();
-void prueba1();
+
 void tic_init();
 
 /***************************************************************************
@@ -77,8 +78,10 @@ typedef struct {
 	volatile uint32_t write;
 	volatile uint32_t dir;
 } gpio_t;
-void     prueba(); 
+ 
+void     sensor();
 void     tim();
+
 /***************************************************************************
  * UART0
  */
@@ -92,13 +95,13 @@ typedef struct {
    volatile uint32_t rxtx;
 } uart_t;
 
-void uart_init();
-void uart_putchar(char c);        
-void uart_putint(int d);
-void uart_putstr(char *str);
-void uart_putchar1(char f);
-char uart_getchar();
-char uart_getchar1();
+void uart_init();                         
+void uart_putchar(char c);          // poner valor caracter UART0
+void uart_putint(int d);            // poner valor int UART0
+void uart_putstr(char *str);        // poner valor string UART0
+void uart_putchar1(char f);         // poner valor caracter UART1  
+char uart_getchar();                // obtener valor caracter UART0   
+char uart_getchar1();               // obtener valor caracter UART1
 
 
 /***************************************************************************

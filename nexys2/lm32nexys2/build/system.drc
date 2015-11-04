@@ -1,0 +1,13 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Mon Oct 26 15:54:34 2015
+
+drc -z system-routed.ncd
+
+WARNING:PhysDesignRules:812 - Dangling pin <DOA14> on
+   block:<bram0/Mram_ram2.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA15> on
+   block:<bram0/Mram_ram2.A>:<RAMB16_RAMB16A>.
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

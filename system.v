@@ -27,12 +27,12 @@ module system
        // UART1
 
         input             uart_rxd1, 
-	output            uart_txd1,
+	output            uart_txd1
 	
 	// SPI
-	input             spi_miso, 
-	output            spi_mosi,
-	output            spi_clk
+	//input             spi_miso, 
+	//output            spi_mosi,
+	//output            spi_clk
 	// 12c
 //	inout             i2c_sda, 
 //	inout             i2c_scl
@@ -59,6 +59,7 @@ wire [31:0]  lm32i_adr,
              uart0_adr,
              uart1_adr,
              spi0_adr,
+             timer1_adr,
              timer0_adr,
              gpio0_adr,
              ddr0_adr,
@@ -78,6 +79,8 @@ wire [31:0]  lm32i_dat_r,
              spi0_dat_w,
              timer0_dat_r,
              timer0_dat_w,
+             timer1_dat_r,
+             timer1_dat_w,
              gpio0_dat_r,
              gpio0_dat_w,
              bram0_dat_r,
@@ -94,6 +97,7 @@ wire [3:0]   lm32i_sel,
              spi0_sel,
              i2c0_sel,
              timer0_sel,
+             timer1_sel,
              gpio0_sel,
              bram0_sel,
              sram0_sel,
@@ -105,6 +109,7 @@ wire         lm32i_we,
              uart1_we,
              spi0_we,
              timer0_we,
+             timer1_we,
              gpio0_we,
              bram0_we,
              sram0_we,
@@ -117,6 +122,7 @@ wire         lm32i_cyc,
              uart1_cyc,
              spi0_cyc,
              timer0_cyc,
+             timer1_cyc,
              gpio0_cyc,
              bram0_cyc,
              sram0_cyc,
@@ -130,6 +136,7 @@ wire         lm32i_stb,
              spi0_stb,
              i2c0_stb,
              timer0_stb,
+             timer1_stb,
              gpio0_stb,
              bram0_stb,
              sram0_stb,
@@ -141,6 +148,7 @@ wire         lm32i_ack,
              uart1_ack,
              spi0_ack,
              timer0_ack,
+             timer1_ack,
              gpio0_ack,
              bram0_ack,
              sram0_ack,
@@ -167,12 +175,13 @@ wire [1:0]   lm32i_bte,
 //---------------------------------------------------------------------------
 wire [31:0]  intr_n;
 wire [1:0]   timer0_intr;
+wire [1:0]   timer1_intr;
 wire         uart0_intr = 0;
 wire         gpio0_intr;  
 //wire   [1:0] timer0_intr;
 
 
-assign intr_n = { 29'hFFFFFFF,~timer0_intr[1], ~gpio0_intr, ~uart0_intr };
+assign intr_n = { 28'hFFFFFFF,~timer1_intr[1],~timer0_intr[1], ~gpio0_intr, ~uart0_intr };
 
 //---------------------------------------------------------------------------
 // Wishbone Interconnect
@@ -183,8 +192,9 @@ conbus #(
 	.s1_addr(3'b010),	// uart0    0x20000000 
 	.s2_addr(3'b011),	// uart1    0x30000000 
 	.s3_addr(3'b100),       // gpio     0x40000000 
-	.s4_addr(3'b101),	// spi      0x50000000 
-	.s5_addr(3'b110)	// timer    0x60000000 
+	.s4_addr(3'b101),	// time1    0x50000000 
+	.s5_addr(3'b110)	// timer0   0x60000000 
+        
 ) conbus0(
 	.sys_clk( clk ),
 	.sys_rst( ~rst ),
@@ -245,7 +255,7 @@ conbus #(
 	.s3_cyc_o(  gpio0_cyc   ),
 	.s3_stb_o(  gpio0_stb   ),
 	.s3_ack_i(  gpio0_ack   ),
-	// Slave4
+	/*/ Slave4
 	.s4_dat_i(  spi0_dat_r ),
 	.s4_dat_o(  spi0_dat_w ),
 	.s4_adr_o(  spi0_adr   ),
@@ -253,7 +263,16 @@ conbus #(
 	.s4_we_o(   spi0_we    ),
 	.s4_cyc_o(  spi0_cyc   ),
 	.s4_stb_o(  spi0_stb   ),
-	.s4_ack_i(  spi0_ack   ),
+	.s4_ack_i(  spi0_ack   ),*/
+        // Slave4    
+	.s4_dat_i(  timer1_dat_r ),
+	.s4_dat_o(  timer1_dat_w ),
+	.s4_adr_o(  timer1_adr   ),
+	.s4_sel_o(  timer1_sel   ),
+	.s4_we_o(   timer1_we    ),
+	.s4_cyc_o(  timer1_cyc   ),
+	.s4_stb_o(  timer1_stb   ),
+	.s4_ack_i(  timer1_ack   ),
 	// Slave5
         .s5_dat_i(  timer0_dat_r ),
 	.s5_dat_o(  timer0_dat_w ),
@@ -264,7 +283,9 @@ conbus #(
 	.s5_stb_o(  timer0_stb   ),
 	.s5_ack_i(  timer0_ack   )
 
-	
+        
+        
+        
 );
 
 
@@ -444,6 +465,25 @@ wb_timer #(
 	.wb_sel_i( timer0_sel   ),
 	.wb_ack_o( timer0_ack   ), 
 	.intr(     timer0_intr  )
+);
+//---------------------------------------------------------------------------
+// timer1
+//---------------------------------------------------------------------------
+wb_timer #(
+	.clk_freq(   clk_freq  )
+) timer1 (
+	.clk(      clk          ),
+	.reset(    ~rst          ),
+	//
+	.wb_adr_i( timer1_adr   ),
+	.wb_dat_i( timer1_dat_w ),
+	.wb_dat_o( timer1_dat_r ),
+	.wb_stb_i( timer1_stb   ),
+	.wb_cyc_i( timer1_cyc   ),
+	.wb_we_i(  timer1_we    ),
+	.wb_sel_i( timer1_sel   ),
+	.wb_ack_o( timer1_ack   ), 
+	.intr(     timer1_intr  )
 );
 
 //---------------------------------------------------------------------------

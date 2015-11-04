@@ -28,8 +28,8 @@ NET "gpio_io<2>"	LOC = "R8"	| IOSTANDARD = "LVCMOS33";
 NET "gpio_io<3>"	LOC = "T6"	| IOSTANDARD = "LVCMOS33";		
 NET "gpio_io<4>"	LOC = "R6"	| IOSTANDARD = "LVCMOS33";		
 NET "gpio_io<5>"	LOC = "R7"	| IOSTANDARD = "LVCMOS33";		
-NET "gpio_io<6>"	LOC = "U9"	| IOSTANDARD = "LVCMOS33";		
-NET "gpio_io<7>"	LOC = "U8"	| IOSTANDARD = "LVCMOS33";
+NET "gpio_io<6>"	LOC = "P15"	| IOSTANDARD = "LVCMOS33";		
+NET "gpio_io<7>"	LOC = "G14"	| IOSTANDARD = "LVCMOS33";
 
 # ==== SPI ==== Puertos PMOD JB
 
