@@ -133,15 +133,13 @@ void m1sleep(uint32_t msec)
  * medicion tiempo flancos
  */
 
-uint32_t flancopos()                                // devuelve el valor del flanco negativo
+void flancopos()                                // devuelve el valor del flanco negativo
 {
 	uint32_t tcr;
 	// Use timer0.1
 	timer0->counter1 = 0;                       // pone el contador en 0 
 	timer0->tcr1 = TIMER_EN;                    // habilita el timer 0 
-        timer1->tcr0 = 0  ;                         // pone tcr0 timer 1 en 0   
-
-        return timer1->counter0;                    // devuelve el contador0 del timer1   
+                 
    
 }
 uint32_t flanconeg()                                // devuelve el valor del flanco positivo
@@ -149,10 +147,7 @@ uint32_t flanconeg()                                // devuelve el valor del fla
 	uint32_t tiempo;
 	// Use timer0.1
         timer0->tcr1 = 0;                           // pone tcrq del timer 0 en cero  
-        timer1->counter0 = 0;                       // pone el contador0 en el timer 1
-        timer1->tcr0 = TIMER_EN;                    // habilita el timer 1
-         
-	
+       	
 	return timer0->counter1;                    // devuelve el contador1 del timer0    
 	
 }
@@ -202,9 +197,9 @@ void prueba()                          // Si se activa el pin6 del GPIO prenda e
 void prueba1()                         // genera un tren de pulsos flanco positivo y negativo 4 ms
 {
       gpio0->write=0x00;   
-      msleep(4);
+      msleep(19);
       gpio0->write=0x01;
-      msleep(4);
+      msleep(6);
 }
 
 
@@ -224,7 +219,7 @@ int uart_getint()
 
 }
 
-void uart_putchar1(char f) //obtener caracter de la variavle 
+void uart_putchar1(char f) //obtener caracter de la variable 
 {
 	while (uart1->ucr & UART_BUSY) ;
 	uart1->rxtx = f;

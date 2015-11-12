@@ -491,7 +491,7 @@ wb_timer #(
 //---------------------------------------------------------------------------
 
 wire [7:0] gpio0_io;
-//wire        gpio0_irq;
+wire        gpio0_irq;
 
 wb_gpio gpio0 (
 	.clk(      clk          ),
@@ -505,7 +505,8 @@ wb_gpio gpio0 (
 	.wb_we_i(  gpio0_we     ),
 	.wb_ack_o( gpio0_ack    ), 
 	// GPIO
-	.gpio_io(gpio0_io)
+	.gpio_io(gpio_io),
+        .irq(      gpio0_intr   )
 );
 
 //----------------------------------------------------------------------------

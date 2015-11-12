@@ -64,7 +64,7 @@ typedef struct {
 void     msleep(uint32_t msec);
 void     m1sleep(uint32_t msec);
 uint32_t nsleep(uint32_t nsec);
-uint32_t flancopos();
+void flancopos();
 uint32_t flanconeg();
 
 

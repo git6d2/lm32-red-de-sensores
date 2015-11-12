@@ -67,13 +67,17 @@ int main()
         uint32_t i=0;
  
 	c='u';                                   // Initialize UART
+        gpio0->dir=0x00; 
+        c=gpio0->read; 
 
-	
+	/*/for(;;)
+        //prueba();
+
         m1sleep(1);                              //prueba con el timer1 
 
 
 
-        //gpio0->dir=0x0F;                       // dirección GPIO
+        gpio0->dir=0x0F;                       // dirección GPIO
         gpio0->dir=0xFF;                         
         gpio0->write = 0x40;                     // escritura GPIO    
         msleep(100);                             // milisegundos timer0
@@ -85,10 +89,8 @@ for(;;)                                           // prueba lectura del tiempo d
  flag=gpio0->read;
  if(hbe==0 && (flag == 0x80)){
         
-        pruebah=flancopos();
-        x2=(pruebah*1000)/(FCPU);                  // se convierte el valor del contador a milisegundos;     
-	uart_putchar(x1);
-	hbe=1;
+        flancopos();
+    	hbe=1;
        
   }
   if(hbe==1 && !(flag == 0x80)){

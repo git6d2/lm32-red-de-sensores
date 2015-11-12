@@ -17,6 +17,8 @@ parameter clk_freq = 1000000000 / tck; // Frequenzy in HZ
 //----------------------------------------------------------------------------
 reg        clk;
 reg        rst;
+reg [7:0]  gpio;
+wire [7:0] Q;
 wire       led;
 wire       led5;
 
@@ -40,14 +42,15 @@ system #(
 	.led(          led    ),
 	// Uart
 	.uart_rxd(  uart_rxd  ),
-	.uart_txd(  uart_txd  )
+	.uart_txd(  uart_txd  ),
+        .gpio_io( Q)
      
 );
 
 /* Clocking device */
 initial         clk <= 0;
 always #(tck/2) clk <= ~clk;
-
+assign Q = gpio;
 /* Simulation setup */
 initial begin
 
@@ -58,10 +61,17 @@ initial begin
 	$dumpvars(-1, dut);
 	//$dumpvars(-1,clk,rst,uart_txd);
 	// reset
+       
 	#0  rst <= 0;
 	#80 rst <= 1;
-
-	#(tck*1000000) $finish;
+        gpio <=8'h01;
+        #20000 gpio<= 8'h01;
+        #20000 gpio<= 8'h00;
+        #20000 gpio<= 8'h01;
+        #20000 gpio<= 8'h00;
+        #20000 gpio<= 8'h01;
+        #20000 gpio<= 8'h00;
+	#(tck*50000) $finish;
 end
 
 

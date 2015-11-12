@@ -1,15 +1,78 @@
+[*]
+[*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
+[*] Thu Nov 12 13:14:47 2015
+[*]
+[dumpfile] "/home/miguel/Documentos/lm32gp/simulation/system_tb.vcd"
+[dumpfile_mtime] "Thu Nov 12 13:04:15 2015"
+[dumpfile_size] 90502285
+[savefile] "/home/miguel/Documentos/lm32gp/system_tb.vcd.save.sav"
 [timestart] 0
-[size] 1000 600
+[size] 1301 744
 [pos] -1 -1
-*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-27.891592 293000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] system_tb.
 [treeopen] system_tb.dut.
+[treeopen] system_tb.dut.lm0.
+[sst_width] 223
+[signals_width] 203
+[sst_expanded] 1
+[sst_vpaned_height] 211
 @22
 system_tb.dut.gpio0.gpio_dir[7:0]
-system_tb.dut.gpio0.gpio_i[7:0]
+@c00023
+system_tb.dut.gpio_io[7:0]
+@28
+(0)system_tb.dut.gpio_io[7:0]
+(1)system_tb.dut.gpio_io[7:0]
+(2)system_tb.dut.gpio_io[7:0]
+(3)system_tb.dut.gpio_io[7:0]
+(4)system_tb.dut.gpio_io[7:0]
+(5)system_tb.dut.gpio_io[7:0]
+(6)system_tb.dut.gpio_io[7:0]
+(7)system_tb.dut.gpio_io[7:0]
+@1401201
+-group_end
+@c00022
 system_tb.dut.gpio0.gpio_io[7:0]
+@28
+(0)system_tb.dut.gpio0.gpio_io[7:0]
+(1)system_tb.dut.gpio0.gpio_io[7:0]
+(2)system_tb.dut.gpio0.gpio_io[7:0]
+(3)system_tb.dut.gpio0.gpio_io[7:0]
+(4)system_tb.dut.gpio0.gpio_io[7:0]
+(5)system_tb.dut.gpio0.gpio_io[7:0]
+(6)system_tb.dut.gpio0.gpio_io[7:0]
+(7)system_tb.dut.gpio0.gpio_io[7:0]
+@1401200
+-group_end
+@22
+system_tb.dut.gpio0.gpio_i[7:0]
+@c00022
 system_tb.dut.gpio0.gpio_o[7:0]
-@23
+@28
+(0)system_tb.dut.gpio0.gpio_o[7:0]
+(1)system_tb.dut.gpio0.gpio_o[7:0]
+(2)system_tb.dut.gpio0.gpio_o[7:0]
+(3)system_tb.dut.gpio0.gpio_o[7:0]
+(4)system_tb.dut.gpio0.gpio_o[7:0]
+(5)system_tb.dut.gpio0.gpio_o[7:0]
+(6)system_tb.dut.gpio0.gpio_o[7:0]
+(7)system_tb.dut.gpio0.gpio_o[7:0]
+@1401200
+-group_end
+@22
 system_tb.dut.gpio0.wb_adr_i[31:0]
 system_tb.dut.gpio0.wb_dat_i[31:0]
 system_tb.dut.gpio0.wb_dat_o[31:0]
+@28
+system_tb.dut.rst
+@22
+system_tb.dut.gpio0.interrupt_mask[7:0]
+@28
+system_tb.dut.gpio0.reg_interrupt
+@22
+system_tb.dut.gpio0.vec_interrupt[7:0]
+@28
+system_tb.dut.gpio0.irq
+[pattern_trace] 1
+[pattern_trace] 0
