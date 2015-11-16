@@ -56,6 +56,8 @@ void sensor()
 uint32_t l,t;
 
 
+
+
 t=18;                                       //milisegundos señal low  
         
 gpio0->write = 0x00;                        //señal de reset
@@ -151,7 +153,43 @@ uint32_t flanconeg()                                // devuelve el valor del fla
 	return timer0->counter1;                    // devuelve el contador1 del timer0    
 	
 }
-/*void tic_init()
+
+uint32_t lectura()                               
+{
+ uint32_t hbe=0;
+ uint32_t  flag;
+ uint32_t tiempo;
+
+for(;;)                                           // prueba lectura del tiempo de duracion flanco positivo
+{
+ flag=gpio0->read;
+ if(hbe==0 && (flag == 0x01)){
+        
+        flancopos();
+    	hbe=1;
+       
+  }
+  if(hbe==1 && !(flag == 0x01)){
+  
+
+  	tiempo=flanconeg();
+        //x1=(tiempo*1000)/(FCPU);                  // se convierte el valor del contador a milisegundos;     
+	hbe=0;
+
+       return tiempo; 
+  }	
+	
+}
+
+
+
+}
+
+
+
+
+/*
+void tic_init()
 {
 	// Setup timer0.0
 	timer0->compare0 = (FCPU/1000);

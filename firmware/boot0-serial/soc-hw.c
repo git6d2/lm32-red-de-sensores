@@ -56,6 +56,8 @@ void sensor()
 uint32_t l,t;
 
 
+
+
 t=18;                                       //milisegundos señal low  
         
 gpio0->write = 0x00;                        //señal de reset
@@ -151,7 +153,11 @@ uint32_t flanconeg()                                // devuelve el valor del fla
 	return timer0->counter1;                    // devuelve el contador1 del timer0    
 	
 }
-/*void tic_init()
+
+
+
+/*
+void tic_init()
 {
 	// Setup timer0.0
 	timer0->compare0 = (FCPU/1000);

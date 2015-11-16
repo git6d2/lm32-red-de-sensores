@@ -68,38 +68,32 @@ int main()
  
 	c='u';                                   // Initialize UART
         gpio0->dir=0x00; 
-        for(;;)
-        c=gpio0->read; 
+    
 
-	/*/for(;;)
+	//for(;;)
         //prueba();
 
-        m1sleep(1);                              //prueba con el timer1 
 
-
-
-        gpio0->dir=0x0F;                       // dirección GPIO
-        gpio0->dir=0xFF;                         
-        gpio0->write = 0x40;                     // escritura GPIO    
-        msleep(100);                             // milisegundos timer0
-        sensor();                                // lectura del sensor   
-   
-       
+irq_enable();
+irq_set_mask(0x02);
+  
 for(;;)                                           // prueba lectura del tiempo de duracion flanco positivo
 {
  flag=gpio0->read;
- if(hbe==0 && (flag == 0x80)){
+
+ if(hbe==0 && (flag && 0x01)){
         
         flancopos();
     	hbe=1;
        
   }
-  if(hbe==1 && !(flag == 0x80)){
+  if(hbe==1 && !(flag == 0x01)){
   
 
   	tiempo=flanconeg();
-        x1=(tiempo*1000)/(FCPU);                  // se convierte el valor del contador a milisegundos;     
-	uart_putchar(x1);
+        
+	uart_putchar(tiempo);
+        uart_putchar(tiempo>>8);
         hbe=0;
       
   }	
@@ -109,13 +103,12 @@ for(;;)                                           // prueba lectura del tiempo d
      //uint32_t  tiempos= nsleep(1); 
                             
                
-      /*  if(tiempos  == 0x186a0)                  // Prueba devuelve el contador1 del timer0
-         { 
-                   uart_putchar(tiempos);          // mostrar por UART el valor del contador
-                   uart_putchar(tiempos>>8);                     
-                   uart_putchar(tiempos>>16);
-                   uart_putchar(tiempos>>24); 
-                   }*/
+       
+                   uart_putchar(tiempo);          // mostrar por UART el valor del contador
+                   uart_putchar(tiempo>>8);                     
+                   uart_putchar(tiempo>>16);
+                   uart_putchar(tiempo>>24); 
+                  
 
 
      /*for(;;)

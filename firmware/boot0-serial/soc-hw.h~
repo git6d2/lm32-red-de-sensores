@@ -22,6 +22,7 @@ typedef signed   int   int32_t;    // 32 Bit
 typedef unsigned char  uint8_t;    // 8 Bit
 typedef signed   char   int8_t;    // 8 Bit
 
+
 /****************************************************************************
  * Interrupt handling
  */
@@ -30,7 +31,7 @@ typedef void(*isr_ptr_t)(void);
 void     irq_enable();
 void     irq_disable();
 void     irq_set_mask(uint32_t mask);
-uint32_t irq_get_mak();
+uint32_t irq_get_mask();
 
 void     isr_init();
 void     isr_register(int irq, isr_ptr_t isr);
@@ -64,7 +65,7 @@ typedef struct {
 void     msleep(uint32_t msec);
 void     m1sleep(uint32_t msec);
 uint32_t nsleep(uint32_t nsec);
-uint32_t flancopos();
+void flancopos();
 uint32_t flanconeg();
 
 
