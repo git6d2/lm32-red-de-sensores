@@ -21,13 +21,25 @@ void isr_null()
 
 void irq_handler(uint32_t pending)
 {
-	int i;
+        uint32_t tcr;
+        
+       
+	
+        tem=0;
+        if(gpio0->read==0x01)    
+              {	
+        timer0->counter1 = 0;                       // pone el contador en 0 
+	timer0->tcr1 = TIMER_EN;  
+                    }                                // habilita el timer 0
+        else {      
+                    timer0->tcr1 = 0;  
+                    tem=timer0->counter1;
 
-	for(i=0; i<32; i++) {
-		if (pending & 0x01) (*isr_table[i])();
-		pending >>= 1;
-	}
-}
+                    uart_putchar(tem);
+                     
+              }
+             
+ }
 
 void isr_init()
 {

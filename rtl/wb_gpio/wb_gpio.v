@@ -103,7 +103,7 @@ module wb_gpio(
    endgenerate
   //Interupt Mask
 
-  assign interrupt_mask = ~gpio_dir & wb_dat_o;
+  assign interrupt_mask = ~gpio_dir & gpio_o;
   
  /* rising_edge_detect r0(.clk(clk),.signal(interrupt_mask[0]),.pulse(vec_interrupt[0]));
   rising_edge_detect r1(.clk(clk),.signal(interrupt_mask[1]),.pulse(vec_interrupt[1]));

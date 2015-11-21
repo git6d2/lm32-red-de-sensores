@@ -64,7 +64,11 @@ initial begin
        
 	#0  rst <= 0;
 	#80 rst <= 1;
-        gpio <=8'h01;
+        gpio <=8'h00;
+        #20000 gpio<= 8'h01;
+        #20000 gpio<= 8'h00;
+        #20000 gpio<= 8'h01;
+        #20000 gpio<= 8'h00;
         #20000 gpio<= 8'h01;
         #20000 gpio<= 8'h00;
         #20000 gpio<= 8'h01;

@@ -21,13 +21,25 @@ void isr_null()
 
 void irq_handler(uint32_t pending)
 {
-	int i;
+        uint32_t tcr;
+        
+       
+	
+        tem=0;
+        if(gpio0->read==0x01)    
+              {	
+        timer0->counter1 = 0;                       // pone el contador en 0 
+	timer0->tcr1 = TIMER_EN;  
+                    }                                // habilita el timer 0
+        else {      
+                    timer0->tcr1 = 0;  
+                    tem=timer0->counter1;
 
-	for(i=0; i<32; i++) {
-		if (pending & 0x01) (*isr_table[i])();
-		pending >>= 1;
-	}
-}
+                    uart_putchar(tem);
+                     
+              }
+             
+ }
 
 void isr_init()
 {
@@ -153,38 +165,6 @@ uint32_t flanconeg()                                // devuelve el valor del fla
 	return timer0->counter1;                    // devuelve el contador1 del timer0    
 	
 }
-
-uint32_t lectura()                               
-{
- uint32_t hbe=0;
- uint32_t  flag;
- uint32_t tiempo;
-
-for(;;)                                           // prueba lectura del tiempo de duracion flanco positivo
-{
- flag=gpio0->read;
- if(hbe==0 && (flag == 0x01)){
-        
-        flancopos();
-    	hbe=1;
-       
-  }
-  if(hbe==1 && !(flag == 0x01)){
-  
-
-  	tiempo=flanconeg();
-        //x1=(tiempo*1000)/(FCPU);                  // se convierte el valor del contador a milisegundos;     
-	hbe=0;
-
-       return tiempo; 
-  }	
-	
-}
-
-
-
-}
-
 
 
 

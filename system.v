@@ -181,7 +181,7 @@ wire         gpio0_intr;
 //wire   [1:0] timer0_intr;
 
 
-assign intr_n = { 28'hFFFFFFF,~timer1_intr[1],~timer0_intr[1], ~gpio0_intr, ~uart0_intr };
+assign intr_n = { 28'hFFFFFFF,~timer1_intr[1],~timer0_intr[1], ~gpio0_intr,~uart0_intr };
 
 //---------------------------------------------------------------------------
 // Wishbone Interconnect
@@ -505,7 +505,7 @@ wb_gpio gpio0 (
 	.wb_we_i(  gpio0_we     ),
 	.wb_ack_o( gpio0_ack    ), 
 	// GPIO
-	.gpio_io(gpio_io),
+	.gpio_io(gpio0_io),
         .irq(      gpio0_intr   )
 );
 

@@ -50,114 +50,113 @@ RTL Output                         : yes
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/system.v" into library work
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/system.v" into library work
 Parsing module <system>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" into library work
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" into library work
 Parsing module <lac>.
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 23. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 24. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 25. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 86. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 87. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 88. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 89. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 90. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 91. parameter declaration becomes local in lac with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/lac.v" Line 92. parameter declaration becomes local in lac with formal parameter declaration list
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lac/uart.v" into library work
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 23. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 24. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 25. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 86. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 87. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 88. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 89. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 90. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 91. parameter declaration becomes local in lac with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/lac.v" Line 92. parameter declaration becomes local in lac with formal parameter declaration list
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lac/uart.v" into library work
 Parsing module <uart>.
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/uart.v" Line 24. parameter declaration becomes local in uart with formal parameter declaration list
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lac/dp_ram.v" into library work
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/uart.v" Line 24. parameter declaration becomes local in uart with formal parameter declaration list
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lac/dp_ram.v" into library work
 Parsing module <dp_ram>.
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/lac/dp_ram.v" Line 20. parameter declaration becomes local in dp_ram with formal parameter declaration list
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_cpu.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
-Parsing verilog file "/home/miguel/Documentos/lm32gp/system_conf.v" included at line 28.
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/lac/dp_ram.v" Line 20. parameter declaration becomes local in dp_ram with formal parameter declaration list
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_cpu.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
+Parsing verilog file "/home/miguel/Documentos/lm32irq/system_conf.v" included at line 28.
 Parsing module <lm32_cpu>.
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_functions.v" included at line 423.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_instruction_unit.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_functions.v" included at line 423.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_instruction_unit.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
 Parsing module <lm32_instruction_unit>.
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_functions.v" included at line 291.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_decoder.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_functions.v" included at line 291.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_decoder.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
 Parsing module <lm32_decoder>.
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_functions.v" included at line 298.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_simtrace.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 10.
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_functions.v" included at line 298.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_simtrace.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 10.
 Parsing module <lm32_simtrace>.
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_functions.v" included at line 63.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_load_store_unit.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_functions.v" included at line 63.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_load_store_unit.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
 Parsing module <lm32_load_store_unit>.
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_functions.v" included at line 208.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_adder.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_functions.v" included at line 208.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_adder.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
 Parsing module <lm32_adder>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_addsub.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 23.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_addsub.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 23.
 Parsing module <lm32_addsub>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_logic_op.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_logic_op.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
 Parsing module <lm32_logic_op>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_shifter.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_shifter.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
 Parsing module <lm32_shifter>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_multiplier.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_multiplier.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
 Parsing module <lm32_multiplier>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_mc_arithmetic.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 24.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_mc_arithmetic.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 24.
 Parsing module <lm32_mc_arithmetic>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_interrupt.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/system_conf.v" included at line 24.
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 25.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_interrupt.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/system_conf.v" included at line 24.
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 25.
 Parsing module <lm32_interrupt>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_ram.v" into library work
-Parsing verilog file "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_include.v" included at line 23.
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_ram.v" into library work
+Parsing verilog file "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_include.v" included at line 23.
 Parsing module <lm32_ram>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/wb_bram/wb_bram.v" into library work
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/wb_bram/wb_bram.v" into library work
 Parsing module <wb_bram>.
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/wb_bram/wb_bram.v" Line 25. parameter declaration becomes local in wb_bram with formal parameter declaration list
-INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32gp/rtl/wb_bram/wb_bram.v" Line 26. parameter declaration becomes local in wb_bram with formal parameter declaration list
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/wb_uart/wb_uart.v" into library work
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/wb_bram/wb_bram.v" Line 25. parameter declaration becomes local in wb_bram with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/miguel/Documentos/lm32irq/rtl/wb_bram/wb_bram.v" Line 26. parameter declaration becomes local in wb_bram with formal parameter declaration list
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/wb_uart/wb_uart.v" into library work
 Parsing module <wb_uart>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/wb_timer/wb_timer.v" into library work
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/wb_timer/wb_timer.v" into library work
 Parsing module <wb_timer>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" into library work
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/wb_gpio/wb_gpio.v" into library work
 Parsing module <wb_gpio>.
-Parsing module <rising_edge_detect>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/wb_spi/wb_spi.v" into library work
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/wb_spi/wb_spi.v" into library work
 Parsing module <wb_spi>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/wb_conbus/conbus.v" into library work
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/wb_conbus/conbus.v" into library work
 Parsing module <conbus>.
-Analyzing Verilog file "/home/miguel/Documentos/lm32gp/rtl/wb_conbus/conbus_arb.v" into library work
+Analyzing Verilog file "/home/miguel/Documentos/lm32irq/rtl/wb_conbus/conbus_arb.v" into library work
 Parsing module <conbus_arb>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "/home/miguel/Documentos/lm32gp/system.v" Line 189: Port m0_cti_i is not connected to this instance
-WARNING:HDLCompiler:1016 - "/home/miguel/Documentos/lm32gp/system.v" Line 412: Port spi_cs is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/miguel/Documentos/lm32irq/system.v" Line 189: Port m0_cti_i is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/miguel/Documentos/lm32irq/system.v" Line 412: Port spi_cs is not connected to this instance
 
 Elaborating module <system>.
 
 Elaborating module <conbus(s_addr_w=3,s0_addr=3'b0,s1_addr=3'b010,s2_addr=3'b011,s3_addr=3'b100,s4_addr=3'b101,s5_addr=3'b110)>.
 
 Elaborating module <conbus_arb>.
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 253: Assignment to gpio0_sel ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 253: Assignment to gpio0_sel ignored, since the identifier is never used
 
 Elaborating module <lm32_cpu>.
 
 Elaborating module <lm32_instruction_unit(associativity=1,sets=512,bytes_per_line=16,base_address=0,limit=0)>.
-"/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_instruction_unit.v" Line 699. $display Instruction bus error. Address: 0
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_cpu.v" Line 461: Assignment to pc_x ignored, since the identifier is never used
+"/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_instruction_unit.v" Line 699. $display Instruction bus error. Address: 0
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_cpu.v" Line 461: Assignment to pc_x ignored, since the identifier is never used
 
 Elaborating module <lm32_simtrace>.
-WARNING:HDLCompiler:1499 - "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_simtrace.v" Line 20: Empty module <lm32_simtrace> remains a black box.
+WARNING:HDLCompiler:1499 - "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_simtrace.v" Line 20: Empty module <lm32_simtrace> remains a black box.
 
 Elaborating module <lm32_decoder>.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_decoder.v" Line 559: Result of 32-bit expression is truncated to fit in 30-bit target.
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_decoder.v" Line 559: Result of 32-bit expression is truncated to fit in 30-bit target.
 
 Elaborating module <lm32_load_store_unit(associativity=1,sets=512,bytes_per_line=16,base_address=0,limit=0)>.
 
@@ -172,13 +171,13 @@ Elaborating module <lm32_multiplier>.
 Elaborating module <lm32_mc_arithmetic>.
 
 Elaborating module <lm32_interrupt>.
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_cpu.v" Line 1138: Assignment to x_result_sel_logic_x ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 308: Assignment to lm32i_cti ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 309: Assignment to lm32i_lock ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 310: Assignment to lm32i_bte ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 322: Assignment to lm32d_cti ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 323: Assignment to lm32d_lock ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 324: Assignment to lm32d_bte ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_cpu.v" Line 1138: Assignment to x_result_sel_logic_x ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 308: Assignment to lm32i_cti ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 309: Assignment to lm32i_lock ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 310: Assignment to lm32i_bte ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 322: Assignment to lm32d_cti ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 323: Assignment to lm32d_lock ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 324: Assignment to lm32d_bte ignored, since the identifier is never used
 
 Elaborating module <wb_bram(adr_width=12,mem_file_name="../firmware/boot0-serial/image.ram")>.
 Reading initialization file \"../firmware/boot0-serial/image.ram\".
@@ -186,89 +185,70 @@ Reading initialization file \"../firmware/boot0-serial/image.ram\".
 Elaborating module <wb_uart(clk_freq=100000000,baud=115200)>.
 
 Elaborating module <uart(freq_hz=100000000,baud=115200)>.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/lac/uart.v" Line 39: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/lac/uart.v" Line 88: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/lac/uart.v" Line 91: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/lac/uart.v" Line 135: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/lac/uart.v" Line 138: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/lac/uart.v" Line 39: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/lac/uart.v" Line 88: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/lac/uart.v" Line 91: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/lac/uart.v" Line 135: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/lac/uart.v" Line 138: Result of 5-bit expression is truncated to fit in 4-bit target.
 
 Elaborating module <wb_spi>.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/wb_spi/wb_spi.v" Line 57: Result of 9-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/wb_spi/wb_spi.v" Line 63: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 418: Assignment to spi0_dat_r ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 423: Assignment to spi0_ack ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 424: Assignment to spi0_clk ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/system.v" Line 425: Assignment to spi0_mosi ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/wb_spi/wb_spi.v" Line 57: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/wb_spi/wb_spi.v" Line 63: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 418: Assignment to spi0_dat_r ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 423: Assignment to spi0_ack ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 424: Assignment to spi0_clk ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/system.v" Line 425: Assignment to spi0_mosi ignored, since the identifier is never used
 
 Elaborating module <wb_timer(clk_freq=100000000)>.
 
 Elaborating module <wb_gpio>.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 105: Result of 32-bit expression is truncated to fit in 8-bit target.
-
-Elaborating module <rising_edge_detect>.
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 107: Assignment to vec_interrupt ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 108: Assignment to vec_interrupt ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 109: Assignment to vec_interrupt ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 110: Assignment to vec_interrupt ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 111: Assignment to vec_interrupt ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 112: Assignment to vec_interrupt ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 113: Assignment to vec_interrupt ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 114: Assignment to vec_interrupt ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 120: Assignment to en ignored, since the identifier is never used
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 151: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" Line 153: Result of 8-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 61: Net <spi0_adr[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 79: Net <spi0_dat_w[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 97: Net <spi0_sel[3]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 110: Net <spi0_we> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 123: Net <spi0_cyc> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 136: Net <spi0_stb> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 158: Net <lm32i_rty> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 159: Net <lm32d_rty> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 161: Net <lm32i_err> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 162: Net <lm32d_err> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32gp/system.v" Line 409: Net <spi0_miso> does not have a driver.
-WARNING:HDLCompiler:552 - "/home/miguel/Documentos/lm32gp/system.v" Line 198: Input port m0_cti_i[2] is not connected on this instance
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_cpu.v" line 483. All outputs of instance <simtrace> of block <lm32_simtrace> are unconnected in block <lm32_cpu>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 107. All outputs of instance <r0> of block <rising_edge_detect> are unconnected in block <wb_gpio>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 108. All outputs of instance <r1> of block <rising_edge_detect> are unconnected in block <wb_gpio>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 109. All outputs of instance <r2> of block <rising_edge_detect> are unconnected in block <wb_gpio>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 110. All outputs of instance <r3> of block <rising_edge_detect> are unconnected in block <wb_gpio>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 111. All outputs of instance <r4> of block <rising_edge_detect> are unconnected in block <wb_gpio>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 112. All outputs of instance <r5> of block <rising_edge_detect> are unconnected in block <wb_gpio>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 113. All outputs of instance <r6> of block <rising_edge_detect> are unconnected in block <wb_gpio>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 114. All outputs of instance <r7> of block <rising_edge_detect> are unconnected in block <wb_gpio>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/miguel/Documentos/lm32gp/system.v" line 412. All outputs of instance <spi0> of block <wb_spi> are unconnected in block <system>. Underlying logic will be removed.
+WARNING:HDLCompiler:1127 - "/home/miguel/Documentos/lm32irq/rtl/wb_gpio/wb_gpio.v" Line 121: Assignment to en ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/wb_gpio/wb_gpio.v" Line 152: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/miguel/Documentos/lm32irq/rtl/wb_gpio/wb_gpio.v" Line 154: Result of 8-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 61: Net <spi0_adr[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 79: Net <spi0_dat_w[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 97: Net <spi0_sel[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 110: Net <spi0_we> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 123: Net <spi0_cyc> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 136: Net <spi0_stb> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 158: Net <lm32i_rty> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 159: Net <lm32d_rty> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 161: Net <lm32i_err> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 162: Net <lm32d_err> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/miguel/Documentos/lm32irq/system.v" Line 409: Net <spi0_miso> does not have a driver.
+WARNING:HDLCompiler:552 - "/home/miguel/Documentos/lm32irq/system.v" Line 198: Input port m0_cti_i[2] is not connected on this instance
+WARNING:Xst:2972 - "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_cpu.v" line 483. All outputs of instance <simtrace> of block <lm32_simtrace> are unconnected in block <lm32_cpu>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/miguel/Documentos/lm32irq/system.v" line 412. All outputs of instance <spi0> of block <wb_spi> are unconnected in block <system>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <system>.
-    Related source file is "/home/miguel/Documentos/lm32gp/system.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/system.v".
         bootram_file = "../firmware/boot0-serial/image.ram"
         clk_freq = 100000000
         uart_baud_rate = 115200
 WARNING:Xst:2898 - Port 'm0_cti_i', unconnected in block instance 'conbus0', is tied to GND.
 WARNING:Xst:2898 - Port 'm1_cti_i', unconnected in block instance 'conbus0', is tied to GND.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 198: Output port <s0_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 198: Output port <s1_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 198: Output port <s2_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 198: Output port <s3_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 198: Output port <s3_sel_o> of the instance <conbus0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 198: Output port <s4_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 198: Output port <s5_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 295: Output port <I_CTI_O> of the instance <lm0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 295: Output port <I_BTE_O> of the instance <lm0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 295: Output port <D_CTI_O> of the instance <lm0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 295: Output port <D_BTE_O> of the instance <lm0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 295: Output port <I_LOCK_O> of the instance <lm0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 295: Output port <D_LOCK_O> of the instance <lm0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 412: Output port <wb_dat_o> of the instance <spi0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 412: Output port <spi_cs> of the instance <spi0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 412: Output port <wb_ack_o> of the instance <spi0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 412: Output port <spi_sck> of the instance <spi0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/system.v" line 412: Output port <spi_mosi> of the instance <spi0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 198: Output port <s0_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 198: Output port <s1_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 198: Output port <s2_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 198: Output port <s3_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 198: Output port <s3_sel_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 198: Output port <s4_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 198: Output port <s5_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 295: Output port <I_CTI_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 295: Output port <I_BTE_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 295: Output port <D_CTI_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 295: Output port <D_BTE_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 295: Output port <I_LOCK_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 295: Output port <D_LOCK_O> of the instance <lm0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 412: Output port <wb_dat_o> of the instance <spi0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 412: Output port <spi_cs> of the instance <spi0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 412: Output port <wb_ack_o> of the instance <spi0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 412: Output port <spi_sck> of the instance <spi0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/system.v" line 412: Output port <spi_mosi> of the instance <spi0> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <spi0_adr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <spi0_dat_w> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <spi0_sel> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -285,7 +265,7 @@ WARNING:Xst:653 - Signal <spi0_miso> is used but never assigned. This sourceless
 Unit <system> synthesized.
 
 Synthesizing Unit <conbus>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/wb_conbus/conbus.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/wb_conbus/conbus.v".
         s_addr_w = 3
         s0_addr = 3'b000
         s1_addr = 3'b010
@@ -298,7 +278,7 @@ Synthesizing Unit <conbus>.
 Unit <conbus> synthesized.
 
 Synthesizing Unit <conbus_arb>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/wb_conbus/conbus_arb.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/wb_conbus/conbus_arb.v".
         grant0 = 7'b0000001
         grant1 = 7'b0000010
         grant2 = 7'b0000100
@@ -325,7 +305,7 @@ Synthesizing Unit <conbus_arb>.
 Unit <conbus_arb> synthesized.
 
 Synthesizing Unit <lm32_cpu>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_cpu.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_cpu.v".
         eba_reset = 32'b00000000000000000000000000000000
         icache_associativity = 1
         icache_sets = 512
@@ -340,8 +320,8 @@ Synthesizing Unit <lm32_cpu>.
         watchpoints = 4'b0000
         breakpoints = 4'b0000
         interrupts = 32
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_cpu.v" line 436: Output port <pc_x> of the instance <instruction_unit> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_cpu.v" line 495: Output port <x_result_sel_logic> of the instance <decoder> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_cpu.v" line 436: Output port <pc_x> of the instance <instruction_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_cpu.v" line 495: Output port <x_result_sel_logic> of the instance <decoder> is unconnected or connected to loadless signal.
     Found 32-bit register for signal <operand_0_x>.
     Found 32-bit register for signal <operand_1_x>.
     Found 32-bit register for signal <store_operand_x>.
@@ -419,7 +399,7 @@ INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_cpu.v" line 495: O
 Unit <lm32_cpu> synthesized.
 
 Synthesizing Unit <lm32_instruction_unit>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_instruction_unit.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_instruction_unit.v".
         associativity = 1
         sets = 512
         bytes_per_line = 16
@@ -448,13 +428,13 @@ WARNING:Xst:647 - Input <i_rty_i> is never used. This port will be preserved and
 Unit <lm32_instruction_unit> synthesized.
 
 Synthesizing Unit <lm32_decoder>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_decoder.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_decoder.v".
     Summary:
 	inferred  19 Multiplexer(s).
 Unit <lm32_decoder> synthesized.
 
 Synthesizing Unit <lm32_load_store_unit>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_load_store_unit.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_load_store_unit.v".
         associativity = 1
         sets = 512
         bytes_per_line = 16
@@ -488,13 +468,13 @@ WARNING:Xst:647 - Input <d_rty_i> is never used. This port will be preserved and
 Unit <lm32_load_store_unit> synthesized.
 
 Synthesizing Unit <lm32_adder>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_adder.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_adder.v".
     Summary:
 	no macro.
 Unit <lm32_adder> synthesized.
 
 Synthesizing Unit <lm32_addsub>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_addsub.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_addsub.v".
     Found 33-bit subtractor for signal <GND_15_o_GND_15_o_sub_3_OUT> created at line 63.
     Found 33-bit subtractor for signal <tmp_subResult> created at line 63.
     Found 33-bit adder for signal <n0025> created at line 62.
@@ -505,7 +485,7 @@ Synthesizing Unit <lm32_addsub>.
 Unit <lm32_addsub> synthesized.
 
 Synthesizing Unit <lm32_logic_op>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_logic_op.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_logic_op.v".
     Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<0>> created at line 67.
     Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<1>> created at line 67.
     Found 1-bit 4-to-1 multiplexer for signal <logic_result_x<2>> created at line 67.
@@ -543,7 +523,7 @@ Synthesizing Unit <lm32_logic_op>.
 Unit <lm32_logic_op> synthesized.
 
 Synthesizing Unit <lm32_multiplier>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_multiplier.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_multiplier.v".
     Found 32-bit register for signal <multiplier>.
     Found 32-bit register for signal <product>.
     Found 32-bit register for signal <result>.
@@ -555,7 +535,7 @@ Synthesizing Unit <lm32_multiplier>.
 Unit <lm32_multiplier> synthesized.
 
 Synthesizing Unit <lm32_mc_arithmetic>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_mc_arithmetic.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_mc_arithmetic.v".
     Found 32-bit register for signal <p>.
     Found 32-bit register for signal <a>.
     Found 32-bit register for signal <b>.
@@ -586,7 +566,7 @@ Synthesizing Unit <lm32_mc_arithmetic>.
 Unit <lm32_mc_arithmetic> synthesized.
 
 Synthesizing Unit <lm32_interrupt>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lm32/lm32_interrupt.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lm32/lm32_interrupt.v".
         interrupts = 32
     Found 32-bit register for signal <im>.
     Found 32-bit register for signal <ip>.
@@ -599,7 +579,7 @@ Synthesizing Unit <lm32_interrupt>.
 Unit <lm32_interrupt> synthesized.
 
 Synthesizing Unit <wb_bram>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/wb_bram/wb_bram.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/wb_bram/wb_bram.v".
         mem_file_name = "../firmware/boot0-serial/image.ram"
         adr_width = 12
 WARNING:Xst:647 - Input <wb_adr_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -615,7 +595,7 @@ WARNING:Xst:647 - Input <rst_i> is never used. This port will be preserved and l
 Unit <wb_bram> synthesized.
 
 Synthesizing Unit <wb_uart>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/wb_uart/wb_uart.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/wb_uart/wb_uart.v".
         clk_freq = 100000000
         baud = 115200
 WARNING:Xst:647 - Input <wb_adr_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -633,37 +613,37 @@ WARNING:Xst:647 - Input <wb_dat_i<31:8>> is never used. This port will be preser
     Found 1-bit register for signal <tx_wr>.
     Found 1-bit register for signal <rx_ack>.
     Found 1-bit register for signal <ack>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<29><2:2>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<11><29:29>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<24><11:11>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<28><24:24>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<18><28:28>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<31><18:18>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<27><31:31>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<26><27:27>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<25><26:26>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<23><25:25>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<22><23:23>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<30><2:2>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<25><30:30>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<24><25:25>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<15><24:24>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<29><15:15>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<31><29:29>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<22><31:31>> (without init value) have a constant value of 0 in block <wb_uart>.
     WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<21><22:22>> (without init value) have a constant value of 0 in block <wb_uart>.
     WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<20><21:21>> (without init value) have a constant value of 0 in block <wb_uart>.
     WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<19><20:20>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<16><19:19>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<15><16:16>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<14><15:15>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<12><14:14>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<10><12:12>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<18><19:19>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<16><18:18>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<14><16:16>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<13><14:14>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<12><13:13>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<11><12:12>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<10><11:11>> (without init value) have a constant value of 0 in block <wb_uart>.
     WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<9><10:10>> (without init value) have a constant value of 0 in block <wb_uart>.
     WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<8><9:9>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<30><8:8>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<17><30:30>> (without init value) have a constant value of 0 in block <wb_uart>.
-    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<13><17:17>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<28><8:8>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<27><28:28>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<26><27:27>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<23><26:26>> (without init value) have a constant value of 0 in block <wb_uart>.
+    WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<17><23:23>> (without init value) have a constant value of 0 in block <wb_uart>.
     Summary:
 	inferred  11 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <wb_uart> synthesized.
 
 Synthesizing Unit <uart>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/lac/uart.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/lac/uart.v".
         freq_hz = 100000000
         baud = 115200
     Found 1-bit register for signal <uart_rxd1>.
@@ -693,7 +673,7 @@ Synthesizing Unit <uart>.
 Unit <uart> synthesized.
 
 Synthesizing Unit <wb_timer>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/wb_timer/wb_timer.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/wb_timer/wb_timer.v".
         clk_freq = 100000000
 WARNING:Xst:647 - Input <wb_adr_i<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -724,7 +704,7 @@ WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved an
 Unit <wb_timer> synthesized.
 
 Synthesizing Unit <wb_gpio>.
-    Related source file is "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v".
+    Related source file is "/home/miguel/Documentos/lm32irq/rtl/wb_gpio/wb_gpio.v".
         gpio_io_width = 8
         gpio_dir_reset_val = 0
         gpio_o_reset_val = 0
@@ -733,14 +713,6 @@ Synthesizing Unit <wb_gpio>.
 WARNING:Xst:647 - Input <wb_adr_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <wb_adr_i<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <wb_dat_i<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 107: Output port <pulse> of the instance <r0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 108: Output port <pulse> of the instance <r1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 109: Output port <pulse> of the instance <r2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 110: Output port <pulse> of the instance <r3> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 111: Output port <pulse> of the instance <r4> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 112: Output port <pulse> of the instance <r5> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 113: Output port <pulse> of the instance <r6> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 114: Output port <pulse> of the instance <r7> is unconnected or connected to loadless signal.
     Found 8-bit register for signal <gpio_dir>.
     Found 1-bit register for signal <ack>.
     Found 32-bit register for signal <wb_dat_o>.
@@ -748,17 +720,17 @@ INFO:Xst:3210 - "/home/miguel/Documentos/lm32gp/rtl/wb_gpio/wb_gpio.v" line 114:
     Found 1-bit register for signal <reg_interrupt>.
     Found 1-bit register for signal <irq>.
     Found 8-bit register for signal <gpio_o>.
-    Found 1-bit adder for signal <cont_PWR_23_o_add_21_OUT<0>> created at line 151.
-    Found 1-bit tristate buffer for signal <gpio_io<0>> created at line 99
-    Found 1-bit tristate buffer for signal <gpio_io<1>> created at line 99
-    Found 1-bit tristate buffer for signal <gpio_io<2>> created at line 99
-    Found 1-bit tristate buffer for signal <gpio_io<3>> created at line 99
-    Found 1-bit tristate buffer for signal <gpio_io<4>> created at line 99
-    Found 1-bit tristate buffer for signal <gpio_io<5>> created at line 99
-    Found 1-bit tristate buffer for signal <gpio_io<6>> created at line 99
-    Found 1-bit tristate buffer for signal <gpio_io<7>> created at line 99
-    Found 1-bit comparator greater for signal <cont_PWR_23_o_LessThan_21_o> created at line 151
-    Found 8-bit comparator not equal for signal <interrupt_mask[7]_GND_26_o_equal_24_o> created at line 159
+    Found 1-bit adder for signal <cont_PWR_23_o_add_21_OUT<0>> created at line 152.
+    Found 1-bit tristate buffer for signal <gpio_io<0>> created at line 100
+    Found 1-bit tristate buffer for signal <gpio_io<1>> created at line 100
+    Found 1-bit tristate buffer for signal <gpio_io<2>> created at line 100
+    Found 1-bit tristate buffer for signal <gpio_io<3>> created at line 100
+    Found 1-bit tristate buffer for signal <gpio_io<4>> created at line 100
+    Found 1-bit tristate buffer for signal <gpio_io<5>> created at line 100
+    Found 1-bit tristate buffer for signal <gpio_io<6>> created at line 100
+    Found 1-bit tristate buffer for signal <gpio_io<7>> created at line 100
+    Found 1-bit comparator greater for signal <cont_PWR_23_o_LessThan_21_o> created at line 152
+    Found 8-bit comparator not equal for signal <interrupt_mask[7]_GND_26_o_equal_24_o> created at line 160
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  52 D-type flip-flop(s).
@@ -1313,14 +1285,6 @@ Processing Unit <system> :
 	Register(s) lm0/w_result_sel_load_m has(ve) been backward balanced into : lm0/w_result_sel_load_m_BRB1.
 	Register(s) lm0/w_result_sel_mul_m has(ve) been backward balanced into : lm0/w_result_sel_mul_m_BRB0 lm0/w_result_sel_mul_m_BRB1.
 Unit <system> processed.
-FlipFlop gpio0/gpio_o_7 has been replicated 1 time(s) to handle iob=true attribute.
-FlipFlop gpio0/gpio_o_6 has been replicated 1 time(s) to handle iob=true attribute.
-FlipFlop gpio0/gpio_o_5 has been replicated 1 time(s) to handle iob=true attribute.
-FlipFlop gpio0/gpio_o_4 has been replicated 1 time(s) to handle iob=true attribute.
-FlipFlop gpio0/gpio_o_3 has been replicated 1 time(s) to handle iob=true attribute.
-FlipFlop gpio0/gpio_o_2 has been replicated 1 time(s) to handle iob=true attribute.
-FlipFlop gpio0/gpio_o_1 has been replicated 1 time(s) to handle iob=true attribute.
-FlipFlop gpio0/gpio_o_0 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop uart0/uart0/uart_txd has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop uart1/uart0/uart_txd has been replicated 1 time(s) to handle iob=true attribute.
 
@@ -1330,8 +1294,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1405
- Flip-Flops                                            : 1405
+# Registers                                            : 1397
+ Flip-Flops                                            : 1397
 
 =========================================================================
 
@@ -1354,27 +1318,27 @@ Top Level Output File Name         : system.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2385
+# BELS                             : 2369
 #      GND                         : 1
 #      INV                         : 27
 #      LUT1                        : 154
 #      LUT2                        : 192
 #      LUT3                        : 197
-#      LUT4                        : 193
+#      LUT4                        : 177
 #      LUT5                        : 279
 #      LUT6                        : 704
 #      MUXCY                       : 338
 #      MUXF7                       : 7
 #      VCC                         : 1
 #      XORCY                       : 292
-# FlipFlops/Latches                : 1405
-#      FD                          : 51
+# FlipFlops/Latches                : 1397
+#      FD                          : 27
 #      FDC                         : 123
 #      FDCE                        : 713
 #      FDE                         : 88
 #      FDPE                        : 34
 #      FDR                         : 30
-#      FDRE                        : 232
+#      FDRE                        : 248
 #      FDS                         : 4
 #      FDSE                        : 130
 # RAMS                             : 65
@@ -1396,18 +1360,18 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1393  out of  126800     1%  
- Number of Slice LUTs:                 1874  out of  63400     2%  
-    Number used as Logic:              1746  out of  63400     2%  
+ Number of Slice Registers:            1385  out of  126800     1%  
+ Number of Slice LUTs:                 1858  out of  63400     2%  
+    Number used as Logic:              1730  out of  63400     2%  
     Number used as Memory:              128  out of  19000     0%  
        Number used as RAM:              128
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2143
-   Number with an unused Flip Flop:     750  out of   2143    34%  
-   Number with an unused LUT:           269  out of   2143    12%  
-   Number of fully used LUT-FF pairs:  1124  out of   2143    52%  
-   Number of unique control sets:        48
+ Number of LUT Flip Flop pairs used:   2131
+   Number with an unused Flip Flop:     746  out of   2131    35%  
+   Number with an unused LUT:           273  out of   2131    12%  
+   Number of fully used LUT-FF pairs:  1112  out of   2131    52%  
+   Number of unique control sets:        50
 
 IO Utilization: 
  Number of IOs:                          16
@@ -1441,7 +1405,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 1470  |
+clk                                | BUFGP                  | 1462  |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1453,7 +1417,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 6.292ns (Maximum Frequency: 158.937MHz)
-   Minimum input arrival time before clock: 1.583ns
+   Minimum input arrival time before clock: 1.594ns
    Maximum output required time after clock: 1.042ns
    Maximum combinational path delay: No path found
 
@@ -1464,7 +1428,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 6.292ns (frequency: 158.937MHz)
-  Total number of paths / destination ports: 1345401 / 3499
+  Total number of paths / destination ports: 1345160 / 3507
 -------------------------------------------------------------------------
 Delay:               6.292ns (Levels of Logic = 3)
   Source:            lm0/multiplier/multiplier_1 (FF)
@@ -1487,24 +1451,24 @@ Delay:               6.292ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1476 / 1460
+  Total number of paths / destination ports: 1477 / 1470
 -------------------------------------------------------------------------
-Offset:              1.583ns (Levels of Logic = 3)
-  Source:            rst (PAD)
-  Destination:       gpio0/wb_dat_o_0 (FF)
+Offset:              1.594ns (Levels of Logic = 3)
+  Source:            gpio_io<7> (PAD)
+  Destination:       gpio0/irq (FF)
   Destination Clock: clk rising
 
-  Data Path: rst to gpio0/wb_dat_o_0
+  Data Path: gpio_io<7> to gpio0/irq
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            44   0.001   0.792  rst_IBUF (rst_IBUF)
-     LUT6:I1->O            8   0.097   0.589  gpio0/_n01071 (gpio0/_n0107)
-     LUT4:I0->O            1   0.097   0.000  gpio0/wb_dat_o_0_rstpot1 (gpio0/wb_dat_o_0_rstpot1)
-     FD:D                      0.008          gpio0/wb_dat_o_0
+     IOBUF:IO->O           2   0.001   0.697  gpio_io_7_IOBUF (N216)
+     LUT6:I0->O            1   0.097   0.693  gpio0/interrupt_mask[7]_INV_176_o2 (gpio0/interrupt_mask[7]_INV_176_o2)
+     LUT6:I0->O            1   0.097   0.000  gpio0/interrupt_mask[7]_INV_176_o3 (gpio0/interrupt_mask[7]_INV_176_o)
+     FD:D                      0.008          gpio0/irq
     ----------------------------------------
-    Total                      1.583ns (0.203ns logic, 1.380ns route)
-                                       (12.8% logic, 87.2% route)
+    Total                      1.594ns (0.203ns logic, 1.391ns route)
+                                       (12.7% logic, 87.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -1548,9 +1512,9 @@ Total CPU time to Xst completion: 30.03 secs
 --> 
 
 
-Total memory usage is 511108 kilobytes
+Total memory usage is 511212 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  308 (   0 filtered)
-Number of infos    :  121 (   0 filtered)
+Number of warnings :  291 (   0 filtered)
+Number of infos    :  113 (   0 filtered)
 

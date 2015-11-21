@@ -51,7 +51,6 @@ void isr_unregister(int irq)
 {
 	isr_table[irq] = &isr_null;
 }
-
 /***************************************************************************
  * TIMER Functions
  */

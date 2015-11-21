@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
-[*] Thu Nov 12 13:14:47 2015
+[*] Wed Nov 18 17:06:22 2015
 [*]
-[dumpfile] "/home/miguel/Documentos/lm32gp/simulation/system_tb.vcd"
-[dumpfile_mtime] "Thu Nov 12 13:04:15 2015"
-[dumpfile_size] 90502285
-[savefile] "/home/miguel/Documentos/lm32gp/system_tb.vcd.save.sav"
-[timestart] 0
+[dumpfile] "/home/miguel/Documentos/lm32irq/simulation/system_tb.vcd"
+[dumpfile_mtime] "Wed Nov 18 17:04:07 2015"
+[dumpfile_size] 59995954
+[savefile] "/home/miguel/Documentos/lm32irq/system_tb.vcd.save.sav"
+[timestart] 13903000
 [size] 1301 744
 [pos] -1 -1
-*-27.891592 293000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-17.891592 14095000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] system_tb.
 [treeopen] system_tb.dut.
 [treeopen] system_tb.dut.lm0.
@@ -19,7 +19,7 @@
 [sst_vpaned_height] 211
 @22
 system_tb.dut.gpio0.gpio_dir[7:0]
-@c00023
+@c00022
 system_tb.dut.gpio_io[7:0]
 @28
 (0)system_tb.dut.gpio_io[7:0]
@@ -30,7 +30,7 @@ system_tb.dut.gpio_io[7:0]
 (5)system_tb.dut.gpio_io[7:0]
 (6)system_tb.dut.gpio_io[7:0]
 (7)system_tb.dut.gpio_io[7:0]
-@1401201
+@1401200
 -group_end
 @c00022
 system_tb.dut.gpio0.gpio_io[7:0]
@@ -66,13 +66,18 @@ system_tb.dut.gpio0.wb_dat_i[31:0]
 system_tb.dut.gpio0.wb_dat_o[31:0]
 @28
 system_tb.dut.rst
-@22
-system_tb.dut.gpio0.interrupt_mask[7:0]
-@28
-system_tb.dut.gpio0.reg_interrupt
-@22
-system_tb.dut.gpio0.vec_interrupt[7:0]
-@28
 system_tb.dut.gpio0.irq
+@22
+system_tb.dut.timer0.compare1[31:0]
+system_tb.dut.timer0.counter1[31:0]
+@28
+system_tb.dut.lm0.interrupt.ie
+system_tb.dut.lm0.interrupt.interrupt_exception
+@22
+system_tb.dut.lm0.interrupt.interrupt_n[31:0]
+system_tb.dut.uart0.tx_data[7:0]
+system_tb.dut.uart0.tx_data[7:0]
+@28
+system_tb.dut.uart0.tx_wr
 [pattern_trace] 1
 [pattern_trace] 0

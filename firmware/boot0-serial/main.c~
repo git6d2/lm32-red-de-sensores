@@ -52,11 +52,12 @@
 //**************************************************************************************************
 
 
+
 int main()
 {
 
-       
-	uint32_t x=1;
+        
+	uint32_t gpio=0;
 	uint8_t  c;
         uint32_t  flag;
         uint32_t pruebah=0;
@@ -72,53 +73,17 @@ int main()
 
 	//for(;;)
         //prueba();
-
-
-irq_enable();
-irq_set_mask(0x02);
-  
-for(;;)                                           // prueba lectura del tiempo de duracion flanco positivo
-{
- flag=gpio0->read;
-
- if(hbe==0 && (flag && 0x01)){
-        
-        flancopos();
-    	hbe=1;
-       
-  }
-  if(hbe==1 && !(flag == 0x01)){
-  
-
-  	tiempo=flanconeg();
-        
-	uart_putchar(tiempo);
-        uart_putchar(tiempo>>8);
-        hbe=0;
       
-  }	
 	
-}
- 
-     //uint32_t  tiempos= nsleep(1); 
-                            
-               
+        irq_enable();
+        irq_set_mask(0x02);
        
-                   uart_putchar(tiempo);          // mostrar por UART el valor del contador
-                   uart_putchar(tiempo>>8);                     
-                   uart_putchar(tiempo>>16);
-                   uart_putchar(tiempo>>24); 
-                  
+    /*    if (1800 < tem <2100)
+          gpio=1;
+         else
+          gpio=0;
+      
+        data = data<<1 + gpio;
 
-
-     /*for(;;)
-      prueba(); // se usa para probar la lectura del GPIO */         
-	
-  
-     /*for(;;)
-   {
-      uart_putchar(uart_getchar1()); // prueva del ECHO  de funcionamiento de la UART 1 a la UART2
-
-     }*/
-	
+        uart_putchar(data);    */  
 }
