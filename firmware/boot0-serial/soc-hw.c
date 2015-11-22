@@ -22,21 +22,23 @@ void isr_null()
 void irq_handler(uint32_t pending)
 {
         uint32_t tcr;
-        
-       
-	
+
+
+
         tem=0;
-        if(gpio0->read==0x01)    
-              {	
-        timer0->counter1 = 0;                       // pone el contador en 0 
-	timer0->tcr1 = TIMER_EN;  
+        if(gpio0->read==0x01)
+              {
+        timer0->counter1 = 0;                       // pone el contador en 0
+	timer0->tcr1 = TIMER_EN;
                     }                                // habilita el timer 0
-        else {      
-                    timer0->tcr1 = 0;  
+        else {
+                    timer0->tcr1 = 0;
                     tem=timer0->counter1;
 
                     uart_putchar(tem);
-                     
+                    uart_putchar(tem>>8);
+
+
               }
              
  }

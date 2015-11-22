@@ -75,7 +75,7 @@ initial begin
         #20000 gpio<= 8'h00;
         #20000 gpio<= 8'h01;
         #20000 gpio<= 8'h00;
-	#(tck*50000) $finish;
+	#(tck*20000) $finish;
 end
 
 

@@ -69,15 +69,15 @@ int main()
  
 	c='u';                                   // Initialize UART
         gpio0->dir=0x00; 
-    
-
-	//for(;;)
+       gpio0->write=0xFF;
+       //for(;;)
         //prueba();
       
 	
         irq_enable();
         irq_set_mask(0x02);
-       
+        for(;;);
+
     /*    if (1800 < tem <2100)
           gpio=1;
          else

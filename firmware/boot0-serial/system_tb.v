@@ -61,7 +61,7 @@ initial begin
 	#0  rst <= 0;
 	#80 rst <= 1;
 
-	#(tck*1000000) $finish;
+	#(tck*250000) $finish;
 end
 
 

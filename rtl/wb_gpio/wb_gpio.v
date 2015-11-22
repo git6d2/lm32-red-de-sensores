@@ -20,7 +20,7 @@
  * adr 5: gpio dir 23:16
  * 
  * Backend pinout file needs to be updated for any GPIO width changes.
- w2* 
+ * 
  */ 
 
 module wb_gpio(
@@ -36,8 +36,7 @@ module wb_gpio(
 	    wb_ack_o,
 	    wb_dat_o,
 	    gpio_io,
-            irq
-);
+	    irq);
 
 
    parameter gpio_io_width = 8;
@@ -58,43 +57,42 @@ module wb_gpio(
    input 		    wb_cyc_i;
    input 		    wb_stb_i;
    
-   
    output reg [wb_dat_width-1:0] wb_dat_o; // constantly sampling gpio in bus
    output 		 wb_ack_o;
-
       
    //I/O PORT
    inout [gpio_io_width-1:0] gpio_io;
    //Interupt
-   output    reg                 irq;
+   output reg irq;
 
    // Internal registers
    reg [gpio_io_width-1:0]   gpio_dir;
 
    reg [gpio_io_width-1:0]   gpio_o;
 
-   reg cont;
-   wire [gpio_io_width-1:0]  gpio_i;
- 
-   reg en;
-   reg  reg_interrupt;
-   wire  [gpio_io_width-1:0]   vec_interrupt;
-   wire [gpio_io_width-1:0]   interrupt_mask;
-
-//Wisbone logical Interface
-
+   wire [gpio_io_width-1:0]  gpio_i; 
    
-
+   initial begin
+   gpio_dir<=0;
+   wb_dat_o<=0;
+   gpio_o<=0;
+end
+reg  reg_interrupt;
+ reg cont;
+//Wisbone logical Interface
+   reg  ack;
+   
+   assign wb_ack_o = wb_stb_i & wb_cyc_i & ack;
 
    wire wb_rd = wb_stb_i & wb_cyc_i & ~wb_we_i;
    wire wb_wr = wb_stb_i & wb_cyc_i &  wb_we_i;
-
-   reg  ack;
-   assign wb_ack_o = wb_stb_i & wb_cyc_i & ack;
-
+//Interrupt 
+    wire [7:0] interrupt_mask;
+    wire [7:0] vec_interrupt;
+    
     
    // Tristate logic for IO
-   genvar    i;
+   genvar 		     i;
    generate 
       for (i=0;i<gpio_io_width;i=i+1)  begin: gpio_tris
 	 assign gpio_io[i] = (gpio_dir[i]) ? gpio_o[i] : 1'bz;
@@ -102,10 +100,10 @@ module wb_gpio(
 	 end
    endgenerate
   //Interupt Mask
-
-  assign interrupt_mask = ~gpio_dir & gpio_o;
+  assign interrupt_mask = ~gpio_dir & gpio_i;
   
- /* rising_edge_detect r0(.clk(clk),.signal(interrupt_mask[0]),.pulse(vec_interrupt[0]));
+  /*
+  rising_edge_detect r0(.clk(clk),.signal(interrupt_mask[0]),.pulse(vec_interrupt[0]));
   rising_edge_detect r1(.clk(clk),.signal(interrupt_mask[1]),.pulse(vec_interrupt[1]));
   rising_edge_detect r2(.clk(clk),.signal(interrupt_mask[2]),.pulse(vec_interrupt[2]));
   rising_edge_detect r3(.clk(clk),.signal(interrupt_mask[3]),.pulse(vec_interrupt[3]));
@@ -113,43 +111,44 @@ module wb_gpio(
   rising_edge_detect r5(.clk(clk),.signal(interrupt_mask[5]),.pulse(vec_interrupt[5]));
   rising_edge_detect r6(.clk(clk),.signal(interrupt_mask[6]),.pulse(vec_interrupt[6]));
   rising_edge_detect r7(.clk(clk),.signal(interrupt_mask[7]),.pulse(vec_interrupt[7]));
+  
+  assign irq=|vec_interrupt;
   */
-  //assign irq = (|vec_interrupt) ? 1 : 0 ;
-      
-
    // GPIO data out register
    always @(posedge clk)begin
      if (rst)begin
-        gpio_o <= 0; // All set to in at reset
-        gpio_dir <= 0;
-        ack <= 0;
-     end
+       gpio_o <= 0; // All set to in at reset
+       gpio_dir <= 0;
+       ack <= 0;
+       end
      else begin 
         ack<=0;
+        
         if (wb_rd & ~ack) begin             //Read cycle
          ack<=1;
          case(wb_adr_i[3:2])
           2'b00:begin  
             wb_dat_o[31:8]<=0;
             wb_dat_o[7:0] <= gpio_i;
-          end
-          default: wb_dat_o <= 32'b0; 
+            end
+          default: wb_dat_o <= 0;    
          endcase
-        end
-
+        end 
         else if (wb_wr & ~ack ) begin  
             ack <= 1;                          //Write cycle
             case(wb_adr_i[3:2])
-             2'b01: gpio_o   <= wb_dat_i[7:0];
+             2'b01: gpio_o <= wb_dat_i[7:0];
              2'b10: gpio_dir <= wb_dat_i[7:0];
-             2'b11: en<= wb_dat_i[0];
+             default:begin
+                gpio_dir <= gpio_dir;
+             end
             endcase
-        end
-     end        
+       end
+      end        
    end   
 
   always @(posedge clk)begin
-    if(cont < 1'b1) cont<=cont+1;
+    if(~cont) cont<=1;
     else begin
     reg_interrupt<=interrupt_mask;
     cont<=0;
@@ -159,10 +158,10 @@ module wb_gpio(
   always @(posedge clk)
   if(interrupt_mask==reg_interrupt) irq<=0;
   else irq<=1;  
-  
+
+ 
 endmodule 
-        
-/*    
+/*               
 module rising_edge_detect
 (
  input  clk,
@@ -174,8 +173,7 @@ reg     signal_prev;
  
 always @(posedge clk) signal_prev <= signal;
  
-
-assign pulse =0; //(~signal_prev) ? (signal & ~signal_prev): 0;
-
+assign pulse = signal & ~signal_prev;
+ 
 endmodule
 */
