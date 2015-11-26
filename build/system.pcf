@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Nov 19 12:48:11 2015
+// Written by: Map P.20131013 on Wed Nov 25 12:17:03 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -20,16 +20,19 @@ COMP "led" LOCATE = SITE "P2" LEVEL 1;
 COMP "uart_rxd1" LOCATE = SITE "F4" LEVEL 1;
 PIN bram0/Mram_ram_pins<63> = BEL "bram0/Mram_ram" PINNAME CLKARDCLKU;
 PIN bram0/Mram_ram_pins<62> = BEL "bram0/Mram_ram" PINNAME CLKARDCLKL;
-TIMEGRP sys_clk = BEL "gpio0/irq" BEL "gpio0/wb_dat_o_7" BEL
-        "gpio0/wb_dat_o_6" BEL "gpio0/wb_dat_o_5" BEL "gpio0/wb_dat_o_4" BEL
-        "gpio0/wb_dat_o_3" BEL "gpio0/wb_dat_o_2" BEL "gpio0/wb_dat_o_1" BEL
-        "gpio0/wb_dat_o_0" BEL "gpio0/gpio_dir_7" BEL "gpio0/gpio_dir_6" BEL
-        "gpio0/gpio_dir_5" BEL "gpio0/gpio_dir_4" BEL "gpio0/gpio_dir_3" BEL
-        "gpio0/gpio_dir_2" BEL "gpio0/gpio_dir_1" BEL "gpio0/gpio_dir_0" BEL
-        "conbus0/conbus_arb/state_FSM_FFd3" BEL "lm0/write_enable_w" BEL
-        "lm0/write_enable_m" BEL "lm0/store_m" BEL "lm0/load_m" BEL
-        "lm0/branch_m" BEL "lm0/m_bypass_enable_m" BEL
-        "lm0/csr_write_enable_x" BEL "lm0/scall_x" BEL "lm0/eret_x" BEL
+TIMEGRP sys_clk = BEL "gpio0/r0/signal_prev" BEL "gpio0/r1/signal_prev" BEL
+        "gpio0/r2/signal_prev" BEL "gpio0/r3/signal_prev" BEL
+        "gpio0/r4/signal_prev" BEL "gpio0/r5/signal_prev" BEL
+        "gpio0/r6/signal_prev" BEL "gpio0/r7/signal_prev" BEL
+        "gpio0/wb_dat_o_7" BEL "gpio0/wb_dat_o_6" BEL "gpio0/wb_dat_o_5" BEL
+        "gpio0/wb_dat_o_4" BEL "gpio0/wb_dat_o_3" BEL "gpio0/wb_dat_o_2" BEL
+        "gpio0/wb_dat_o_1" BEL "gpio0/wb_dat_o_0" BEL "gpio0/gpio_dir_7" BEL
+        "gpio0/gpio_dir_6" BEL "gpio0/gpio_dir_5" BEL "gpio0/gpio_dir_4" BEL
+        "gpio0/gpio_dir_3" BEL "gpio0/gpio_dir_2" BEL "gpio0/gpio_dir_1" BEL
+        "gpio0/gpio_dir_0" BEL "conbus0/conbus_arb/state_FSM_FFd3" BEL
+        "lm0/write_enable_w" BEL "lm0/write_enable_m" BEL "lm0/store_m" BEL
+        "lm0/load_m" BEL "lm0/m_bypass_enable_m" BEL "lm0/branch_m" BEL
+        "lm0/csr_write_enable_x" BEL "lm0/eret_x" BEL "lm0/scall_x" BEL
         "lm0/load_x" BEL "lm0/write_enable_x" BEL "lm0/x_bypass_enable_x" BEL
         "lm0/csr_x_2" BEL "lm0/csr_x_1" BEL "lm0/csr_x_0" BEL
         "lm0/branch_target_m_31" BEL "lm0/branch_target_m_30" BEL
@@ -83,15 +86,14 @@ TIMEGRP sys_clk = BEL "gpio0/irq" BEL "gpio0/wb_dat_o_7" BEL
         "lm0/operand_m_9" BEL "lm0/operand_m_8" BEL "lm0/operand_m_7" BEL
         "lm0/operand_m_6" BEL "lm0/operand_m_5" BEL "lm0/operand_m_4" BEL
         "lm0/operand_m_3" BEL "lm0/operand_m_2" BEL "lm0/operand_m_1" BEL
-        "lm0/operand_m_0" BEL "lm0/condition_met_m" BEL "lm0/eba_31" BEL
-        "lm0/eba_30" BEL "lm0/eba_29" BEL "lm0/eba_28" BEL "lm0/eba_27" BEL
-        "lm0/eba_26" BEL "lm0/eba_25" BEL "lm0/eba_24" BEL "lm0/eba_23" BEL
-        "lm0/eba_22" BEL "lm0/eba_21" BEL "lm0/eba_20" BEL "lm0/eba_19" BEL
-        "lm0/eba_18" BEL "lm0/eba_17" BEL "lm0/eba_16" BEL "lm0/eba_15" BEL
-        "lm0/eba_14" BEL "lm0/eba_13" BEL "lm0/eba_12" BEL "lm0/eba_11" BEL
-        "lm0/eba_10" BEL "lm0/eba_9" BEL "lm0/eba_8" BEL
-        "lm0/store_operand_x_31" BEL "lm0/store_operand_x_30" BEL
-        "lm0/store_operand_x_29" BEL "lm0/store_operand_x_28" BEL
+        "lm0/operand_m_0" BEL "lm0/eba_31" BEL "lm0/eba_30" BEL "lm0/eba_29"
+        BEL "lm0/eba_28" BEL "lm0/eba_27" BEL "lm0/eba_26" BEL "lm0/eba_25"
+        BEL "lm0/eba_24" BEL "lm0/eba_23" BEL "lm0/eba_22" BEL "lm0/eba_21"
+        BEL "lm0/eba_20" BEL "lm0/eba_19" BEL "lm0/eba_18" BEL "lm0/eba_17"
+        BEL "lm0/eba_16" BEL "lm0/eba_15" BEL "lm0/eba_14" BEL "lm0/eba_13"
+        BEL "lm0/eba_12" BEL "lm0/eba_11" BEL "lm0/eba_10" BEL "lm0/eba_9" BEL
+        "lm0/eba_8" BEL "lm0/store_operand_x_31" BEL "lm0/store_operand_x_30"
+        BEL "lm0/store_operand_x_29" BEL "lm0/store_operand_x_28" BEL
         "lm0/store_operand_x_27" BEL "lm0/store_operand_x_26" BEL
         "lm0/store_operand_x_25" BEL "lm0/store_operand_x_24" BEL
         "lm0/store_operand_x_23" BEL "lm0/store_operand_x_22" BEL
@@ -111,11 +113,11 @@ TIMEGRP sys_clk = BEL "gpio0/irq" BEL "gpio0/wb_dat_o_7" BEL
         "lm0/write_idx_w_2" BEL "lm0/write_idx_w_1" BEL "lm0/write_idx_w_0"
         BEL "lm0/valid_d" BEL "lm0/write_idx_m_4" BEL "lm0/write_idx_m_3" BEL
         "lm0/write_idx_m_2" BEL "lm0/write_idx_m_1" BEL "lm0/write_idx_m_0"
-        BEL "lm0/m_result_sel_compare_m" BEL "lm0/valid_m" BEL
-        "lm0/exception_w" BEL "lm0/exception_m" BEL "lm0/adder_op_x_n" BEL
-        "lm0/adder_op_x" BEL "lm0/m_result_sel_compare_x" BEL
-        "lm0/x_result_sel_add_x" BEL "lm0/x_result_sel_sext_x" BEL
-        "lm0/x_result_sel_shift_x" BEL "lm0/x_result_sel_mc_arith_x" BEL
+        BEL "lm0/m_result_sel_shift_m" BEL "lm0/m_result_sel_compare_m" BEL
+        "lm0/valid_m" BEL "lm0/exception_w" BEL "lm0/exception_m" BEL
+        "lm0/adder_op_x_n" BEL "lm0/adder_op_x" BEL "lm0/m_result_sel_shift_x"
+        BEL "lm0/m_result_sel_compare_x" BEL "lm0/x_result_sel_add_x" BEL
+        "lm0/x_result_sel_sext_x" BEL "lm0/x_result_sel_mc_arith_x" BEL
         "lm0/x_result_sel_csr_x" BEL "lm0/valid_f" BEL "lm0/logic_op_x_3" BEL
         "lm0/logic_op_x_2" BEL "lm0/size_x_1" BEL "lm0/size_x_0" BEL
         "lm0/write_idx_x_4" BEL "lm0/write_idx_x_3" BEL "lm0/write_idx_x_2"
@@ -364,75 +366,107 @@ TIMEGRP sys_clk = BEL "gpio0/irq" BEL "gpio0/wb_dat_o_7" BEL
         "lm0/load_store_unit/d_adr_o_3" BEL "lm0/load_store_unit/d_adr_o_2"
         BEL "lm0/load_store_unit/d_adr_o_1" BEL
         "lm0/load_store_unit/d_adr_o_0" BEL "lm0/load_store_unit/size_m_1" BEL
-        "lm0/load_store_unit/size_m_0" BEL "lm0/multiplier/result_31" BEL
-        "lm0/multiplier/result_30" BEL "lm0/multiplier/result_29" BEL
-        "lm0/multiplier/result_28" BEL "lm0/multiplier/result_27" BEL
-        "lm0/multiplier/result_26" BEL "lm0/multiplier/result_25" BEL
-        "lm0/multiplier/result_24" BEL "lm0/multiplier/result_23" BEL
-        "lm0/multiplier/result_22" BEL "lm0/multiplier/result_21" BEL
-        "lm0/multiplier/result_20" BEL "lm0/multiplier/result_19" BEL
-        "lm0/multiplier/result_18" BEL "lm0/multiplier/result_17" BEL
-        "lm0/multiplier/result_16" BEL "lm0/multiplier/result_15" BEL
-        "lm0/multiplier/result_14" BEL "lm0/multiplier/result_13" BEL
-        "lm0/multiplier/result_12" BEL "lm0/multiplier/result_11" BEL
-        "lm0/multiplier/result_10" BEL "lm0/multiplier/result_9" BEL
-        "lm0/multiplier/result_8" BEL "lm0/multiplier/result_7" BEL
-        "lm0/multiplier/result_6" BEL "lm0/multiplier/result_5" BEL
-        "lm0/multiplier/result_4" BEL "lm0/multiplier/result_3" BEL
-        "lm0/multiplier/result_2" BEL "lm0/multiplier/result_1" BEL
-        "lm0/multiplier/result_0" BEL "lm0/multiplier/product_31" BEL
-        "lm0/multiplier/product_30" BEL "lm0/multiplier/product_29" BEL
-        "lm0/multiplier/product_28" BEL "lm0/multiplier/product_27" BEL
-        "lm0/multiplier/product_26" BEL "lm0/multiplier/product_25" BEL
-        "lm0/multiplier/product_24" BEL "lm0/multiplier/product_23" BEL
-        "lm0/multiplier/product_22" BEL "lm0/multiplier/product_21" BEL
-        "lm0/multiplier/product_20" BEL "lm0/multiplier/product_19" BEL
-        "lm0/multiplier/product_18" BEL "lm0/multiplier/product_17" BEL
-        "lm0/multiplier/product_16" BEL "lm0/multiplier/product_15" BEL
-        "lm0/multiplier/product_14" BEL "lm0/multiplier/product_13" BEL
-        "lm0/multiplier/product_12" BEL "lm0/multiplier/product_11" BEL
-        "lm0/multiplier/product_10" BEL "lm0/multiplier/product_9" BEL
-        "lm0/multiplier/product_8" BEL "lm0/multiplier/product_7" BEL
-        "lm0/multiplier/product_6" BEL "lm0/multiplier/product_5" BEL
-        "lm0/multiplier/product_4" BEL "lm0/multiplier/product_3" BEL
-        "lm0/multiplier/product_2" BEL "lm0/multiplier/product_1" BEL
-        "lm0/multiplier/product_0" BEL "lm0/multiplier/multiplier_31" BEL
-        "lm0/multiplier/multiplier_30" BEL "lm0/multiplier/multiplier_29" BEL
-        "lm0/multiplier/multiplier_28" BEL "lm0/multiplier/multiplier_27" BEL
-        "lm0/multiplier/multiplier_26" BEL "lm0/multiplier/multiplier_25" BEL
-        "lm0/multiplier/multiplier_24" BEL "lm0/multiplier/multiplier_23" BEL
-        "lm0/multiplier/multiplier_22" BEL "lm0/multiplier/multiplier_21" BEL
-        "lm0/multiplier/multiplier_20" BEL "lm0/multiplier/multiplier_19" BEL
-        "lm0/multiplier/multiplier_18" BEL "lm0/multiplier/multiplier_17" BEL
-        "lm0/multiplier/multiplier_16" BEL "lm0/multiplier/multiplier_15" BEL
-        "lm0/multiplier/multiplier_14" BEL "lm0/multiplier/multiplier_13" BEL
-        "lm0/multiplier/multiplier_12" BEL "lm0/multiplier/multiplier_11" BEL
-        "lm0/multiplier/multiplier_10" BEL "lm0/multiplier/multiplier_9" BEL
-        "lm0/multiplier/multiplier_8" BEL "lm0/multiplier/multiplier_7" BEL
-        "lm0/multiplier/multiplier_6" BEL "lm0/multiplier/multiplier_5" BEL
-        "lm0/multiplier/multiplier_4" BEL "lm0/multiplier/multiplier_3" BEL
-        "lm0/multiplier/multiplier_2" BEL "lm0/multiplier/multiplier_1" BEL
-        "lm0/multiplier/multiplier_0" BEL "lm0/multiplier/muliplicand_31" BEL
-        "lm0/multiplier/muliplicand_30" BEL "lm0/multiplier/muliplicand_29"
-        BEL "lm0/multiplier/muliplicand_28" BEL
-        "lm0/multiplier/muliplicand_27" BEL "lm0/multiplier/muliplicand_26"
-        BEL "lm0/multiplier/muliplicand_25" BEL
-        "lm0/multiplier/muliplicand_24" BEL "lm0/multiplier/muliplicand_23"
-        BEL "lm0/multiplier/muliplicand_22" BEL
-        "lm0/multiplier/muliplicand_21" BEL "lm0/multiplier/muliplicand_20"
-        BEL "lm0/multiplier/muliplicand_19" BEL
-        "lm0/multiplier/muliplicand_18" BEL "lm0/multiplier/muliplicand_17"
-        BEL "lm0/multiplier/muliplicand_16" BEL
-        "lm0/multiplier/muliplicand_15" BEL "lm0/multiplier/muliplicand_14"
-        BEL "lm0/multiplier/muliplicand_13" BEL
-        "lm0/multiplier/muliplicand_12" BEL "lm0/multiplier/muliplicand_11"
-        BEL "lm0/multiplier/muliplicand_10" BEL "lm0/multiplier/muliplicand_9"
-        BEL "lm0/multiplier/muliplicand_8" BEL "lm0/multiplier/muliplicand_7"
-        BEL "lm0/multiplier/muliplicand_6" BEL "lm0/multiplier/muliplicand_5"
-        BEL "lm0/multiplier/muliplicand_4" BEL "lm0/multiplier/muliplicand_3"
-        BEL "lm0/multiplier/muliplicand_2" BEL "lm0/multiplier/muliplicand_1"
-        BEL "lm0/multiplier/muliplicand_0" BEL "lm0/mc_arithmetic/cycles_5"
-        BEL "lm0/mc_arithmetic/cycles_4" BEL "lm0/mc_arithmetic/cycles_3" BEL
+        "lm0/load_store_unit/size_m_0" BEL "lm0/shifter/right_shift_result_31"
+        BEL "lm0/shifter/right_shift_result_30" BEL
+        "lm0/shifter/right_shift_result_29" BEL
+        "lm0/shifter/right_shift_result_28" BEL
+        "lm0/shifter/right_shift_result_27" BEL
+        "lm0/shifter/right_shift_result_26" BEL
+        "lm0/shifter/right_shift_result_25" BEL
+        "lm0/shifter/right_shift_result_24" BEL
+        "lm0/shifter/right_shift_result_23" BEL
+        "lm0/shifter/right_shift_result_22" BEL
+        "lm0/shifter/right_shift_result_21" BEL
+        "lm0/shifter/right_shift_result_20" BEL
+        "lm0/shifter/right_shift_result_19" BEL
+        "lm0/shifter/right_shift_result_18" BEL
+        "lm0/shifter/right_shift_result_17" BEL
+        "lm0/shifter/right_shift_result_16" BEL
+        "lm0/shifter/right_shift_result_15" BEL
+        "lm0/shifter/right_shift_result_14" BEL
+        "lm0/shifter/right_shift_result_13" BEL
+        "lm0/shifter/right_shift_result_12" BEL
+        "lm0/shifter/right_shift_result_11" BEL
+        "lm0/shifter/right_shift_result_10" BEL
+        "lm0/shifter/right_shift_result_9" BEL
+        "lm0/shifter/right_shift_result_8" BEL
+        "lm0/shifter/right_shift_result_7" BEL
+        "lm0/shifter/right_shift_result_6" BEL
+        "lm0/shifter/right_shift_result_5" BEL
+        "lm0/shifter/right_shift_result_4" BEL
+        "lm0/shifter/right_shift_result_3" BEL
+        "lm0/shifter/right_shift_result_2" BEL
+        "lm0/shifter/right_shift_result_1" BEL
+        "lm0/shifter/right_shift_result_0" BEL "lm0/shifter/direction_m" BEL
+        "lm0/multiplier/result_31" BEL "lm0/multiplier/result_30" BEL
+        "lm0/multiplier/result_29" BEL "lm0/multiplier/result_28" BEL
+        "lm0/multiplier/result_27" BEL "lm0/multiplier/result_26" BEL
+        "lm0/multiplier/result_25" BEL "lm0/multiplier/result_24" BEL
+        "lm0/multiplier/result_23" BEL "lm0/multiplier/result_22" BEL
+        "lm0/multiplier/result_21" BEL "lm0/multiplier/result_20" BEL
+        "lm0/multiplier/result_19" BEL "lm0/multiplier/result_18" BEL
+        "lm0/multiplier/result_17" BEL "lm0/multiplier/result_16" BEL
+        "lm0/multiplier/result_15" BEL "lm0/multiplier/result_14" BEL
+        "lm0/multiplier/result_13" BEL "lm0/multiplier/result_12" BEL
+        "lm0/multiplier/result_11" BEL "lm0/multiplier/result_10" BEL
+        "lm0/multiplier/result_9" BEL "lm0/multiplier/result_8" BEL
+        "lm0/multiplier/result_7" BEL "lm0/multiplier/result_6" BEL
+        "lm0/multiplier/result_5" BEL "lm0/multiplier/result_4" BEL
+        "lm0/multiplier/result_3" BEL "lm0/multiplier/result_2" BEL
+        "lm0/multiplier/result_1" BEL "lm0/multiplier/result_0" BEL
+        "lm0/multiplier/product_31" BEL "lm0/multiplier/product_30" BEL
+        "lm0/multiplier/product_29" BEL "lm0/multiplier/product_28" BEL
+        "lm0/multiplier/product_27" BEL "lm0/multiplier/product_26" BEL
+        "lm0/multiplier/product_25" BEL "lm0/multiplier/product_24" BEL
+        "lm0/multiplier/product_23" BEL "lm0/multiplier/product_22" BEL
+        "lm0/multiplier/product_21" BEL "lm0/multiplier/product_20" BEL
+        "lm0/multiplier/product_19" BEL "lm0/multiplier/product_18" BEL
+        "lm0/multiplier/product_17" BEL "lm0/multiplier/product_16" BEL
+        "lm0/multiplier/product_15" BEL "lm0/multiplier/product_14" BEL
+        "lm0/multiplier/product_13" BEL "lm0/multiplier/product_12" BEL
+        "lm0/multiplier/product_11" BEL "lm0/multiplier/product_10" BEL
+        "lm0/multiplier/product_9" BEL "lm0/multiplier/product_8" BEL
+        "lm0/multiplier/product_7" BEL "lm0/multiplier/product_6" BEL
+        "lm0/multiplier/product_5" BEL "lm0/multiplier/product_4" BEL
+        "lm0/multiplier/product_3" BEL "lm0/multiplier/product_2" BEL
+        "lm0/multiplier/product_1" BEL "lm0/multiplier/product_0" BEL
+        "lm0/multiplier/multiplier_31" BEL "lm0/multiplier/multiplier_30" BEL
+        "lm0/multiplier/multiplier_29" BEL "lm0/multiplier/multiplier_28" BEL
+        "lm0/multiplier/multiplier_27" BEL "lm0/multiplier/multiplier_26" BEL
+        "lm0/multiplier/multiplier_25" BEL "lm0/multiplier/multiplier_24" BEL
+        "lm0/multiplier/multiplier_23" BEL "lm0/multiplier/multiplier_22" BEL
+        "lm0/multiplier/multiplier_21" BEL "lm0/multiplier/multiplier_20" BEL
+        "lm0/multiplier/multiplier_19" BEL "lm0/multiplier/multiplier_18" BEL
+        "lm0/multiplier/multiplier_17" BEL "lm0/multiplier/multiplier_16" BEL
+        "lm0/multiplier/multiplier_15" BEL "lm0/multiplier/multiplier_14" BEL
+        "lm0/multiplier/multiplier_13" BEL "lm0/multiplier/multiplier_12" BEL
+        "lm0/multiplier/multiplier_11" BEL "lm0/multiplier/multiplier_10" BEL
+        "lm0/multiplier/multiplier_9" BEL "lm0/multiplier/multiplier_8" BEL
+        "lm0/multiplier/multiplier_7" BEL "lm0/multiplier/multiplier_6" BEL
+        "lm0/multiplier/multiplier_5" BEL "lm0/multiplier/multiplier_4" BEL
+        "lm0/multiplier/multiplier_3" BEL "lm0/multiplier/multiplier_2" BEL
+        "lm0/multiplier/multiplier_1" BEL "lm0/multiplier/multiplier_0" BEL
+        "lm0/multiplier/muliplicand_31" BEL "lm0/multiplier/muliplicand_30"
+        BEL "lm0/multiplier/muliplicand_29" BEL
+        "lm0/multiplier/muliplicand_28" BEL "lm0/multiplier/muliplicand_27"
+        BEL "lm0/multiplier/muliplicand_26" BEL
+        "lm0/multiplier/muliplicand_25" BEL "lm0/multiplier/muliplicand_24"
+        BEL "lm0/multiplier/muliplicand_23" BEL
+        "lm0/multiplier/muliplicand_22" BEL "lm0/multiplier/muliplicand_21"
+        BEL "lm0/multiplier/muliplicand_20" BEL
+        "lm0/multiplier/muliplicand_19" BEL "lm0/multiplier/muliplicand_18"
+        BEL "lm0/multiplier/muliplicand_17" BEL
+        "lm0/multiplier/muliplicand_16" BEL "lm0/multiplier/muliplicand_15"
+        BEL "lm0/multiplier/muliplicand_14" BEL
+        "lm0/multiplier/muliplicand_13" BEL "lm0/multiplier/muliplicand_12"
+        BEL "lm0/multiplier/muliplicand_11" BEL
+        "lm0/multiplier/muliplicand_10" BEL "lm0/multiplier/muliplicand_9" BEL
+        "lm0/multiplier/muliplicand_8" BEL "lm0/multiplier/muliplicand_7" BEL
+        "lm0/multiplier/muliplicand_6" BEL "lm0/multiplier/muliplicand_5" BEL
+        "lm0/multiplier/muliplicand_4" BEL "lm0/multiplier/muliplicand_3" BEL
+        "lm0/multiplier/muliplicand_2" BEL "lm0/multiplier/muliplicand_1" BEL
+        "lm0/multiplier/muliplicand_0" BEL "lm0/mc_arithmetic/cycles_5" BEL
+        "lm0/mc_arithmetic/cycles_4" BEL "lm0/mc_arithmetic/cycles_3" BEL
         "lm0/mc_arithmetic/cycles_2" BEL "lm0/mc_arithmetic/cycles_1" BEL
         "lm0/mc_arithmetic/cycles_0" BEL "lm0/mc_arithmetic/state_FSM_FFd1"
         BEL "lm0/mc_arithmetic/state_FSM_FFd2" BEL
@@ -692,17 +726,19 @@ TIMEGRP sys_clk = BEL "gpio0/irq" BEL "gpio0/wb_dat_o_7" BEL
         "lm0/load_store_unit/d_stb_o" BEL "uart0/uart0/rx_error" BEL
         "uart1/uart0/rx_error" BEL "timer1/en1" BEL "timer1/en0" BEL
         "timer1/ar1" BEL "timer1/ar0" BEL "timer0/en1" BEL "timer0/en0" BEL
-        "timer0/ar1" BEL "timer0/ar0" BEL "bram0/ack" BEL "gpio0/cont" BEL
-        "gpio0/reg_interrupt" BEL "uart1/rx_ack" BEL "uart1/tx_wr" BEL
-        "uart0/rx_ack" BEL "uart0/tx_wr" BEL "timer1/irqen1" BEL
-        "timer1/irqen0" BEL "timer0/irqen1" BEL "timer0/irqen0" BEL
+        "timer0/ar1" BEL "timer0/ar0" BEL "bram0/ack" BEL "uart1/rx_ack" BEL
+        "uart1/tx_wr" BEL "uart0/rx_ack" BEL "uart0/tx_wr" BEL "timer1/irqen1"
+        BEL "timer1/irqen0" BEL "timer0/irqen1" BEL "timer0/irqen0" BEL
         "uart0/uart0/uart_txd" BEL "uart1/uart0/uart_txd" BEL
         "uart0/uart0/rx_count16_3" BEL "uart1/uart0/rx_count16_3" BEL
         "timer1/trig1" BEL "timer1/trig0" BEL "timer0/trig1" BEL
         "timer0/trig0" BEL "lm0/Mcompar_cmp_zero_cy<10>_FRB" BEL
         "lm0/w_result_sel_mul_m_BRB0" BEL "lm0/w_result_sel_mul_m_BRB1" BEL
         "lm0/w_result_sel_load_m_BRB1" BEL "lm0/mc_arithmetic/a_31_BRB0" BEL
-        "lm0/mc_arithmetic/a_31_BRB2" BEL
+        "lm0/mc_arithmetic/a_31_BRB2" BEL "lm0/condition_met_m_BRB0" BEL
+        "lm0/condition_met_m_BRB1" BEL "lm0/condition_met_m_BRB2" BEL
+        "lm0/condition_met_m_BRB3" BEL "lm0/condition_met_m_BRB4" BEL
+        "lm0/condition_met_m_BRB5" BEL
         "lm0/load_store_unit/store_data_m_15_BRB1" BEL
         "lm0/load_store_unit/store_data_m_14_BRB1" BEL
         "lm0/load_store_unit/store_data_m_13_BRB1" BEL
@@ -711,8 +747,6 @@ TIMEGRP sys_clk = BEL "gpio0/irq" BEL "gpio0/wb_dat_o_7" BEL
         "lm0/load_store_unit/store_data_m_10_BRB1" BEL
         "lm0/load_store_unit/store_data_m_9_BRB1" BEL
         "lm0/load_store_unit/store_data_m_8_BRB1" BEL
-        "lm0/load_store_unit/store_data_m_23_BRB1" BEL
-        "lm0/load_store_unit/store_data_m_23_BRB2" BEL
         "lm0/load_store_unit/store_data_m_23_BRB3" BEL
         "lm0/load_store_unit/store_data_m_22_BRB3" BEL
         "lm0/load_store_unit/store_data_m_21_BRB3" BEL
@@ -737,71 +771,71 @@ TIMEGRP sys_clk = BEL "gpio0/irq" BEL "gpio0/wb_dat_o_7" BEL
         "gpio0/gpio_o_7" BEL "gpio0/gpio_o_6" BEL "gpio0/gpio_o_5" BEL
         "gpio0/gpio_o_4" BEL "gpio0/gpio_o_3" BEL "gpio0/gpio_o_2" BEL
         "gpio0/gpio_o_1" BEL "gpio0/gpio_o_0" BEL "uart0/uart0/uart_txd_1" BEL
-        "uart1/uart0/uart_txd_1" BEL "lm0/Mram_registers141/SP" BEL
-        "lm0/Mram_registers141/DP" BEL "lm0/Mram_registers140/SP" BEL
-        "lm0/Mram_registers140/DP" BEL "lm0/Mram_registers138/SP" BEL
-        "lm0/Mram_registers138/DP" BEL "lm0/Mram_registers137/SP" BEL
-        "lm0/Mram_registers137/DP" BEL "lm0/Mram_registers139/SP" BEL
-        "lm0/Mram_registers139/DP" BEL "lm0/Mram_registers135/SP" BEL
-        "lm0/Mram_registers135/DP" BEL "lm0/Mram_registers134/SP" BEL
-        "lm0/Mram_registers134/DP" BEL "lm0/Mram_registers136/SP" BEL
-        "lm0/Mram_registers136/DP" BEL "lm0/Mram_registers132/SP" BEL
-        "lm0/Mram_registers132/DP" BEL "lm0/Mram_registers131/SP" BEL
-        "lm0/Mram_registers131/DP" BEL "lm0/Mram_registers133/SP" BEL
-        "lm0/Mram_registers133/DP" BEL "lm0/Mram_registers130/SP" BEL
-        "lm0/Mram_registers130/DP" BEL "lm0/Mram_registers129/SP" BEL
-        "lm0/Mram_registers129/DP" BEL "lm0/Mram_registers127/SP" BEL
+        "uart1/uart0/uart_txd_1" BEL "lm0/Mram_registers40/SP" BEL
+        "lm0/Mram_registers40/DP" BEL "lm0/Mram_registers39/SP" BEL
+        "lm0/Mram_registers39/DP" BEL "lm0/Mram_registers41/SP" BEL
+        "lm0/Mram_registers41/DP" BEL "lm0/Mram_registers37/SP" BEL
+        "lm0/Mram_registers37/DP" BEL "lm0/Mram_registers36/SP" BEL
+        "lm0/Mram_registers36/DP" BEL "lm0/Mram_registers38/SP" BEL
+        "lm0/Mram_registers38/DP" BEL "lm0/Mram_registers34/SP" BEL
+        "lm0/Mram_registers34/DP" BEL "lm0/Mram_registers33/SP" BEL
+        "lm0/Mram_registers33/DP" BEL "lm0/Mram_registers35/SP" BEL
+        "lm0/Mram_registers35/DP" BEL "lm0/Mram_registers32/SP" BEL
+        "lm0/Mram_registers32/DP" BEL "lm0/Mram_registers31/SP" BEL
+        "lm0/Mram_registers31/DP" BEL "lm0/Mram_registers30/SP" BEL
+        "lm0/Mram_registers30/DP" BEL "lm0/Mram_registers29/SP" BEL
+        "lm0/Mram_registers29/DP" BEL "lm0/Mram_registers27/SP" BEL
+        "lm0/Mram_registers27/DP" BEL "lm0/Mram_registers26/SP" BEL
+        "lm0/Mram_registers26/DP" BEL "lm0/Mram_registers28/SP" BEL
+        "lm0/Mram_registers28/DP" BEL "lm0/Mram_registers24/SP" BEL
+        "lm0/Mram_registers24/DP" BEL "lm0/Mram_registers23/SP" BEL
+        "lm0/Mram_registers23/DP" BEL "lm0/Mram_registers25/SP" BEL
+        "lm0/Mram_registers25/DP" BEL "lm0/Mram_registers21/SP" BEL
+        "lm0/Mram_registers21/DP" BEL "lm0/Mram_registers20/SP" BEL
+        "lm0/Mram_registers20/DP" BEL "lm0/Mram_registers22/SP" BEL
+        "lm0/Mram_registers22/DP" BEL "lm0/Mram_registers10/SP" BEL
+        "lm0/Mram_registers10/DP" BEL "lm0/Mram_registers9/SP" BEL
+        "lm0/Mram_registers9/DP" BEL "lm0/Mram_registers8/SP" BEL
+        "lm0/Mram_registers8/DP" BEL "lm0/Mram_registers7/SP" BEL
+        "lm0/Mram_registers7/DP" BEL "lm0/Mram_registers5/SP" BEL
+        "lm0/Mram_registers5/DP" BEL "lm0/Mram_registers4/SP" BEL
+        "lm0/Mram_registers4/DP" BEL "lm0/Mram_registers6/SP" BEL
+        "lm0/Mram_registers6/DP" BEL "lm0/Mram_registers2/SP" BEL
+        "lm0/Mram_registers2/DP" BEL "lm0/Mram_registers133/SP" BEL
+        "lm0/Mram_registers133/DP" BEL "lm0/Mram_registers3/SP" BEL
+        "lm0/Mram_registers3/DP" BEL "lm0/Mram_registers131/SP" BEL
+        "lm0/Mram_registers131/DP" BEL "lm0/Mram_registers130/SP" BEL
+        "lm0/Mram_registers130/DP" BEL "lm0/Mram_registers132/SP" BEL
+        "lm0/Mram_registers132/DP" BEL "lm0/Mram_registers129/SP" BEL
+        "lm0/Mram_registers129/DP" BEL "lm0/Mram_registers128/SP" BEL
+        "lm0/Mram_registers128/DP" BEL "lm0/Mram_registers127/SP" BEL
         "lm0/Mram_registers127/DP" BEL "lm0/Mram_registers126/SP" BEL
-        "lm0/Mram_registers126/DP" BEL "lm0/Mram_registers128/SP" BEL
-        "lm0/Mram_registers128/DP" BEL "lm0/Mram_registers124/SP" BEL
+        "lm0/Mram_registers126/DP" BEL "lm0/Mram_registers124/SP" BEL
         "lm0/Mram_registers124/DP" BEL "lm0/Mram_registers123/SP" BEL
         "lm0/Mram_registers123/DP" BEL "lm0/Mram_registers125/SP" BEL
-        "lm0/Mram_registers125/DP" BEL "lm0/Mram_registers121/SP" BEL
+        "lm0/Mram_registers125/DP" BEL "lm0/Mram_registers122/SP" BEL
+        "lm0/Mram_registers122/DP" BEL "lm0/Mram_registers121/SP" BEL
         "lm0/Mram_registers121/DP" BEL "lm0/Mram_registers120/SP" BEL
-        "lm0/Mram_registers120/DP" BEL "lm0/Mram_registers122/SP" BEL
-        "lm0/Mram_registers122/DP" BEL "lm0/Mram_registers119/SP" BEL
-        "lm0/Mram_registers119/DP" BEL "lm0/Mram_registers118/SP" BEL
-        "lm0/Mram_registers118/DP" BEL "lm0/Mram_registers116/SP" BEL
-        "lm0/Mram_registers116/DP" BEL "lm0/Mram_registers115/SP" BEL
-        "lm0/Mram_registers115/DP" BEL "lm0/Mram_registers117/SP" BEL
-        "lm0/Mram_registers117/DP" BEL "lm0/Mram_registers113/SP" BEL
+        "lm0/Mram_registers120/DP" BEL "lm0/Mram_registers119/SP" BEL
+        "lm0/Mram_registers119/DP" BEL "lm0/Mram_registers117/SP" BEL
+        "lm0/Mram_registers117/DP" BEL "lm0/Mram_registers116/SP" BEL
+        "lm0/Mram_registers116/DP" BEL "lm0/Mram_registers118/SP" BEL
+        "lm0/Mram_registers118/DP" BEL "lm0/Mram_registers115/SP" BEL
+        "lm0/Mram_registers115/DP" BEL "lm0/Mram_registers114/SP" BEL
+        "lm0/Mram_registers114/DP" BEL "lm0/Mram_registers113/SP" BEL
         "lm0/Mram_registers113/DP" BEL "lm0/Mram_registers112/SP" BEL
-        "lm0/Mram_registers112/DP" BEL "lm0/Mram_registers114/SP" BEL
-        "lm0/Mram_registers114/DP" BEL "lm0/Mram_registers110/SP" BEL
-        "lm0/Mram_registers110/DP" BEL "lm0/Mram_registers33/SP" BEL
-        "lm0/Mram_registers33/DP" BEL "lm0/Mram_registers111/SP" BEL
-        "lm0/Mram_registers111/DP" BEL "lm0/Mram_registers31/SP" BEL
-        "lm0/Mram_registers31/DP" BEL "lm0/Mram_registers30/SP" BEL
-        "lm0/Mram_registers30/DP" BEL "lm0/Mram_registers32/SP" BEL
-        "lm0/Mram_registers32/DP" BEL "lm0/Mram_registers28/SP" BEL
-        "lm0/Mram_registers28/DP" BEL "lm0/Mram_registers27/SP" BEL
-        "lm0/Mram_registers27/DP" BEL "lm0/Mram_registers29/SP" BEL
-        "lm0/Mram_registers29/DP" BEL "lm0/Mram_registers25/SP" BEL
-        "lm0/Mram_registers25/DP" BEL "lm0/Mram_registers24/SP" BEL
-        "lm0/Mram_registers24/DP" BEL "lm0/Mram_registers26/SP" BEL
-        "lm0/Mram_registers26/DP" BEL "lm0/Mram_registers22/SP" BEL
-        "lm0/Mram_registers22/DP" BEL "lm0/Mram_registers21/SP" BEL
-        "lm0/Mram_registers21/DP" BEL "lm0/Mram_registers23/SP" BEL
-        "lm0/Mram_registers23/DP" BEL "lm0/Mram_registers20/SP" BEL
-        "lm0/Mram_registers20/DP" BEL "lm0/Mram_registers19/SP" BEL
-        "lm0/Mram_registers19/DP" BEL "lm0/Mram_registers17/SP" BEL
+        "lm0/Mram_registers112/DP" BEL "lm0/Mram_registers110/SP" BEL
+        "lm0/Mram_registers110/DP" BEL "lm0/Mram_registers19/SP" BEL
+        "lm0/Mram_registers19/DP" BEL "lm0/Mram_registers111/SP" BEL
+        "lm0/Mram_registers111/DP" BEL "lm0/Mram_registers17/SP" BEL
         "lm0/Mram_registers17/DP" BEL "lm0/Mram_registers16/SP" BEL
         "lm0/Mram_registers16/DP" BEL "lm0/Mram_registers18/SP" BEL
         "lm0/Mram_registers18/DP" BEL "lm0/Mram_registers14/SP" BEL
         "lm0/Mram_registers14/DP" BEL "lm0/Mram_registers13/SP" BEL
         "lm0/Mram_registers13/DP" BEL "lm0/Mram_registers15/SP" BEL
-        "lm0/Mram_registers15/DP" BEL "lm0/Mram_registers11/SP" BEL
-        "lm0/Mram_registers11/DP" BEL "lm0/Mram_registers10/SP" BEL
-        "lm0/Mram_registers10/DP" BEL "lm0/Mram_registers12/SP" BEL
-        "lm0/Mram_registers12/DP" BEL "lm0/Mram_registers8/SP" BEL
-        "lm0/Mram_registers8/DP" BEL "lm0/Mram_registers7/SP" BEL
-        "lm0/Mram_registers7/DP" BEL "lm0/Mram_registers9/SP" BEL
-        "lm0/Mram_registers9/DP" BEL "lm0/Mram_registers5/SP" BEL
-        "lm0/Mram_registers5/DP" BEL "lm0/Mram_registers4/SP" BEL
-        "lm0/Mram_registers4/DP" BEL "lm0/Mram_registers6/SP" BEL
-        "lm0/Mram_registers6/DP" BEL "lm0/Mram_registers2/SP" BEL
-        "lm0/Mram_registers2/DP" BEL "lm0/Mram_registers3/SP" BEL
-        "lm0/Mram_registers3/DP" PIN "bram0/Mram_ram_pins<63>" PIN
+        "lm0/Mram_registers15/DP" BEL "lm0/Mram_registers12/SP" BEL
+        "lm0/Mram_registers12/DP" BEL "lm0/Mram_registers11/SP" BEL
+        "lm0/Mram_registers11/DP" PIN "bram0/Mram_ram_pins<63>" PIN
         "bram0/Mram_ram_pins<62>";
 SCHEMATIC END;
 

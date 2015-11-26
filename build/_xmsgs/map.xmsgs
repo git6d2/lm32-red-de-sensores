@@ -9,11 +9,11 @@
 </msg>
 
 <msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">64</arg> more times for the following (max. 5 shown):
-<arg fmt="%s" index="3">lm0/Mram_registers141/SPO,
-lm0/Mram_registers140/SPO,
-lm0/Mram_registers138/SPO,
-lm0/Mram_registers137/SPO,
-lm0/Mram_registers139/SPO</arg>
+<arg fmt="%s" index="3">lm0/Mram_registers40/SPO,
+lm0/Mram_registers39/SPO,
+lm0/Mram_registers41/SPO,
+lm0/Mram_registers37/SPO,
+lm0/Mram_registers36/SPO</arg>
 To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
 </msg>
 

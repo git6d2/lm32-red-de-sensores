@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------
-// LatticeMico32 System On A Chip
+// LateMico32 System On A Chip
 //
 // Top Level Design for the Nexys4 ferney
 //---------------------------------------------------------------------------
@@ -181,7 +181,7 @@ wire         gpio0_intr;
 //wire   [1:0] timer0_intr;
 
 
-assign intr_n = { 28'hFFFFFFF,~timer1_intr[1],~timer0_intr[1], ~gpio0_intr,~uart0_intr };
+assign intr_n = { 28'hFFFFFFF,~timer0_intr[1],~timer0_intr[0], ~gpio0_intr,~uart0_intr };
 
 //---------------------------------------------------------------------------
 // Wishbone Interconnect

@@ -63,7 +63,7 @@ module wb_gpio(
    //I/O PORT
    inout [gpio_io_width-1:0] gpio_io;
    //Interupt
-   output reg irq;
+   output irq;
 
    // Internal registers
    reg [gpio_io_width-1:0]   gpio_dir;
@@ -89,7 +89,7 @@ reg  reg_interrupt;
 //Interrupt 
     wire [7:0] interrupt_mask;
     wire [7:0] vec_interrupt;
-    
+    wire [7:0] vec_interrupt1;
     
    // Tristate logic for IO
    genvar 		     i;
@@ -100,20 +100,34 @@ reg  reg_interrupt;
 	 end
    endgenerate
   //Interupt Mask
-  assign interrupt_mask = ~gpio_dir & gpio_i;
+  assign interrupt_mask = ~gpio_dir & gpio_io;
   
-  /*
-  rising_edge_detect r0(.clk(clk),.signal(interrupt_mask[0]),.pulse(vec_interrupt[0]));
-  rising_edge_detect r1(.clk(clk),.signal(interrupt_mask[1]),.pulse(vec_interrupt[1]));
-  rising_edge_detect r2(.clk(clk),.signal(interrupt_mask[2]),.pulse(vec_interrupt[2]));
-  rising_edge_detect r3(.clk(clk),.signal(interrupt_mask[3]),.pulse(vec_interrupt[3]));
-  rising_edge_detect r4(.clk(clk),.signal(interrupt_mask[4]),.pulse(vec_interrupt[4]));
-  rising_edge_detect r5(.clk(clk),.signal(interrupt_mask[5]),.pulse(vec_interrupt[5]));
-  rising_edge_detect r6(.clk(clk),.signal(interrupt_mask[6]),.pulse(vec_interrupt[6]));
-  rising_edge_detect r7(.clk(clk),.signal(interrupt_mask[7]),.pulse(vec_interrupt[7]));
   
-  assign irq=|vec_interrupt;
+  rising_edge_detect r0(.clk(clk),.signal(interrupt_mask[0]),.pulse(vec_interrupt1[0]));
+  rising_edge_detect r1(.clk(clk),.signal(interrupt_mask[1]),.pulse(vec_interrupt1[1]));
+  rising_edge_detect r2(.clk(clk),.signal(interrupt_mask[2]),.pulse(vec_interrupt1[2]));
+  rising_edge_detect r3(.clk(clk),.signal(interrupt_mask[3]),.pulse(vec_interrupt1[3]));
+  rising_edge_detect r4(.clk(clk),.signal(interrupt_mask[4]),.pulse(vec_interrupt1[4]));
+  rising_edge_detect r5(.clk(clk),.signal(interrupt_mask[5]),.pulse(vec_interrupt1[5]));
+  rising_edge_detect r6(.clk(clk),.signal(interrupt_mask[6]),.pulse(vec_interrupt1[6]));
+  rising_edge_detect r7(.clk(clk),.signal(interrupt_mask[7]),.pulse(vec_interrupt1[7]));
+
+
+ /*
+  flanconeg  r8(.clk1(clk),.signal1(interrupt_mask[0]),.pulse1(vec_interrupt[0]));
+  flanconeg  r9(.clk1(clk),.signal1(interrupt_mask[1]),.pulse1(vec_interrupt[1]));
+  flanconeg  r10(.clk1(clk),.signal1(interrupt_mask[2]),.pulse1(vec_interrupt[2]));
+  flanconeg  r11(.clk1(clk),.signal1(interrupt_mask[3]),.pulse1(vec_interrupt[3]));
+  flanconeg  r12(.clk1(clk),.signal1(interrupt_mask[4]),.pulse1(vec_interrupt[4]));
+  flanconeg  r13(.clk1(clk),.signal1(interrupt_mask[5]),.pulse1(vec_interrupt[5]));
+  flanconeg  r14(.clk1(clk),.signal1(interrupt_mask[6]),.pulse1(vec_interrupt[6]));
+  flanconeg  r15(.clk1(clk),.signal1(interrupt_mask[7]),.pulse1(vec_interrupt[7]));
+  
+  
   */
+assign irq = (|vec_interrupt1);
+   
+  
    // GPIO data out register
    always @(posedge clk)begin
      if (rst)begin
@@ -147,7 +161,7 @@ reg  reg_interrupt;
       end        
    end   
 
-  always @(posedge clk)begin
+  /*always @(posedge clk)begin
     if(~cont) cont<=1;
     else begin
     reg_interrupt<=interrupt_mask;
@@ -157,23 +171,42 @@ reg  reg_interrupt;
 
   always @(posedge clk)
   if(interrupt_mask==reg_interrupt) irq<=0;
-  else irq<=1;  
+  else irq<=1; */ 
 
  
 endmodule 
-/*               
+              
 module rising_edge_detect
 (
  input  clk,
  input  signal,
  output pulse
+
 );
  
 reg     signal_prev;
+reg     signal_prev1;
+
+
  
 always @(posedge clk) signal_prev <= signal;
  
-assign pulse = signal & ~signal_prev;
- 
+   //assign pulse = signal & ~signal_prev;
+   //assign pulse = signal_prev & ~signal ;
+  assign pulse = (signal == (~signal_prev))? 1:0;
 endmodule
-*/
+/*
+ module flanconeg
+(
+ input  clk1,
+ input  signal1,
+ output pulse1
+);
+
+reg     signal_prev1;
+
+always @(negedge clk1) signal_prev1 <= signal1;
+ 
+assign pulse1 = ~signal1 & signal_prev1;
+ 
+endmodule*/
