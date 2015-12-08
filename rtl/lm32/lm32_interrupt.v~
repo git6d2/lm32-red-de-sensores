@@ -201,7 +201,7 @@ begin
     begin
         ie <= `FALSE;
         eie <= `FALSE;
-
+        interrupt_exception <=  `FALSE;
 `ifdef CFG_DEBUG_ENABLED
         bie <= `FALSE;
 `endif
