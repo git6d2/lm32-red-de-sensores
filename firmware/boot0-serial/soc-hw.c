@@ -12,7 +12,7 @@ timer_t *timer0 = (timer_t *)  0x60000000;
 isr_ptr_t isr_table[32];
 
 uint32_t msec = 0;
-int tem;
+int contador;
 /***************************************************************************
  * IRQ handling
  */
@@ -23,26 +23,39 @@ void isr_null()
 void irq_handler(uint32_t pending)
 {
         uint32_t tcr;
-                
+          uint32_t gpio;  
+         uint32_t entrada;  
+      
         //timer0->tcr0     = TIMER_EN | TIMER_AR | TIMER_IRQEN;
 
-        /*tem=0;
-        if(gpio0->read==0x01)
+        
+
+
+                         
+                                 
+    
+        data =  gpio0->read;
+ 
+     uart_putchar('u'); 
+/*
+        if(entrada == 0x01)
               {
-        timer0->counter1 = 0;                       // pone el contador en 0
-	timer0->tcr1 = TIMER_EN;
+        contador=contador + 1; 
+        timer0->counter0 = 0;                       // pone el contador en 0
+	timer0->tcr0 = TIMER_EN;
+       
                     }                                // habilita el timer 0
         else {
-                    timer0->tcr1 = 0;
-                    tem=timer0->counter1;
+   timer0->tcr0 = 0;
+                 
+              tem = timer0->counter0 ;  
 
-                    uart_putchar(tem);
-                    uart_putchar(tem>>8);
-
-
-              }*/
-             uart_putchar('u'); 
- }
+              
+                       
+                            } 
+                    
+              */
+                 }
 
 void isr_init()
 {
@@ -74,13 +87,16 @@ uint32_t l,t;
 
 
 t=18;                                       //milisegundos señal low  
-        
+      
 gpio0->write = 0x00;                        //señal de reset
-msleep(t);
-gpio0->write = 0x40;                         
+nsleep(t);
+gpio0->write = 0x01; 
 gpio0->dir=0x00;
+ 
+                
+nsleep(160);
 
-irq_set_mask(0x04);
+irq_set_mask(0x02);
 
 
 } 

@@ -104,8 +104,11 @@ void uart_putchar1(char f);         // poner valor caracter UART1
 char uart_getchar();                // obtener valor caracter UART0   
 char uart_getchar1();               // obtener valor caracter UART1
 
- extern int tem;
- uint32_t data;
+
+ extern  uint32_t   data;
+ extern  uint32_t   tem;
+ int contador;
+
 /***************************************************************************
  * Pointer to actual components
  */

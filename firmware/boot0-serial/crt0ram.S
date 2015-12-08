@@ -169,27 +169,9 @@ _save_all:
 	sw      (sp+20), r5
 	sw      (sp+24), r6
 	sw      (sp+28), r7
-	sw      (sp+32), r8
-	sw      (sp+36), r9
-	sw      (sp+40), r10
+	
 #ifdef MICO32_FULL_CONTEXT_SAVE_RESTORE
-	sw      (sp+44), r11
-	sw      (sp+48), r12
-	sw      (sp+52), r13
-	sw      (sp+56), r14
-	sw      (sp+60), r15
-	sw      (sp+64), r16
-	sw      (sp+68), r17
-	sw      (sp+72), r18
-	sw      (sp+76), r19
-	sw      (sp+80), r20
-	sw      (sp+84), r21
-	sw      (sp+88), r22
-	sw      (sp+92), r23
-	sw      (sp+96), r24
-	sw      (sp+100), r25
-	sw      (sp+104), r26
-	sw      (sp+108), r27
+	
 #endif
 	sw      (sp+120), ea
 	sw      (sp+124), ba
@@ -214,23 +196,8 @@ _restore_all_and_eret:
         lw      r9, (sp+36) 
         lw      r10, (sp+40)
 #ifdef MICO32_FULL_CONTEXT_SAVE_RESTORE
-        lw      r11, (sp+44)
-        lw      r12, (sp+48)
-        lw      r13, (sp+52)
-        lw      r14, (sp+56)
-        lw      r15, (sp+60)
-        lw      r16, (sp+64)
-        lw      r17, (sp+68)
-        lw      r18, (sp+72)
-        lw      r19, (sp+76)
-        lw      r20, (sp+80)
-        lw      r21, (sp+84)
-        lw      r22, (sp+88)
-        lw      r23, (sp+92)
-        lw      r24, (sp+96)
-        lw      r25, (sp+100)
-        lw      r26, (sp+104)
-        lw      r27, (sp+108)
+     
+    
 #endif
         lw      ra, (sp+116)
         lw      ea, (sp+120)

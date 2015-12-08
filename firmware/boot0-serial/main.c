@@ -52,11 +52,13 @@
 //**************************************************************************************************
 
 
-
+uint32_t tem;
+uint32_t data;
+int contador;
 int main()
 {
-
-        
+       
+        contador=0;
 	uint32_t gpio=0;
 	uint8_t  c;
         uint32_t  flag;
@@ -68,24 +70,21 @@ int main()
         uint32_t i=0;
  
 	c='u';                                   // Initialize UART
-        gpio0->dir=0x00; 
-     
+        gpio0->dir=0xFF; 
+        gpio0->write = 0x01; 
        //for(;;)
         //prueba();
       
 	//tic_init();
-        irq_set_mask(0x02);
-        irq_enable();
+        irq_enable();       
+        msleep(1);
        
-
+        sensor();
+          
         for(;;);
-/*
-       if (1800 < tem <2100)
-          gpio=1;
-         else
-          gpio=0;
-      
-        data = data<<1 + gpio;
-
-        uart_putchar(data);    */  
+        
+        /*irq_enable();
+        irq_set_mask(0x02);
+        
+       */  
 }

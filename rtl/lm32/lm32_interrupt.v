@@ -118,7 +118,8 @@ reg [interrupts-1:0] im;                        // Interrupt mask
 // Combinational Logic
 /////////////////////////////////////////////////////
 
-// Determine which interrupts have occured and are unmasked
+// Determine which interrupts have occured and are unmaskedie
+
 assign interrupt_n_exception = ip & im;
 
 // Determine if any unmasked interrupts have occured
@@ -195,10 +196,12 @@ end
 // IE, IM, IP - Interrupt Enable, Interrupt Mask and Interrupt Pending CSRs
 always @(posedge clk_i `CFG_RESET_SENSITIVITY)
 begin
+   
     if (rst_i == `TRUE)
     begin
         ie <= `FALSE;
         eie <= `FALSE;
+
 `ifdef CFG_DEBUG_ENABLED
         bie <= `FALSE;
 `endif
