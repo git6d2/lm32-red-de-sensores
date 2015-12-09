@@ -94,6 +94,29 @@ void lcd_putchar (uint8_t dato, uint8_t addr){
 	delay(2000);                   // Wait 40 μs
 }
 
+void lcd_putchar2 (uint8_t dato){
+    //NOTA: los tiempos minimos E='1' 230ns, 4bit-4-bit 1us, dato-dato 40us
+
+    lcd0->LCD_DB = 0x01;           // erase data
+    lcd0->LCD_DB = dato;        // 
+    lcd0->LCD_RS = 1;              // RS up
+    lcd0->LCD_E=1;                 // E up
+    delay(12);                     // Wait 240ns
+    lcd0->LCD_E=0;                 // E down
+
+    delay(100);                    // Wait 2us
+
+    lcd0->LCD_DB = 0x01;           // erase data
+    lcd0->LCD_DB = dato & 0xFF;    
+    lcd0->LCD_RS = 1;              // RS up
+    lcd0->LCD_E=1;                 // E up
+    delay(12);                     // Wait 240ns
+    lcd0->LCD_E=0;                 // E down
+
+    delay(2000);                   // Wait 40 μs
+}
+
+
 void lcd_putstr(char *str, uint8_t addr)
 {
   char *c = str;
