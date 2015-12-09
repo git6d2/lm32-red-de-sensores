@@ -1,0 +1,13 @@
+
+public class holoa {
+
+	public static void main(String[] args) {
+		
+		int a = 50;
+		System.out.println(Integer.toBinaryString(50));
+		int b = a >> 8;
+		System.out.println(Integer.toBinaryString(b));
+
+	}
+
+}

@@ -1,0 +1,7 @@
+INFILE=/home/miguel/Descargas/lm32nexys2/build/system-routed.ncd
+OUTFILE=/home/miguel/Descargas/lm32nexys2/build/system.bit
+FAMILY=Spartan3E
+PART=xc3s1200e-5fg320
+WORKINGDIR=/home/miguel/Descargas/lm32nexys2/build
+LICENSE=WebPack
+USER_INFO=211005437_0_0_775
