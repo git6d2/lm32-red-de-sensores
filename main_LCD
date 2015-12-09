@@ -1,0 +1,10 @@
+#include "soc-hw.h"
+int entero=0;
+int main ()
+	{
+	init_lcd();
+	lcd_putstr("LA TEMPERATURA ES:",0x04);
+	delay(50000000); // Wait 2 s
+	return 0;
+	}
+
